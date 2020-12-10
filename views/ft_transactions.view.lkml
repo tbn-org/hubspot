@@ -23,6 +23,13 @@ view: ft_transactions {
     sql: ${TABLE}."AMOUNT_AMT" ;;
   }
 
+  measure: amount_amt_sum {
+    value_format: "$#,##0"
+    label: "Donation Amount Sum"
+    type: number
+    sql: sum(${TABLE}."AMOUNT_AMT") ;;
+  }
+
   dimension: documentnumber_id {
     label: "Document Number"
     primary_key: yes
@@ -52,6 +59,7 @@ view: ft_transactions {
       month,
       year,
       day_of_week,
+      week,
       raw
     ]
     sql: ${TABLE}."TRANSACTIONDATE_DT" ;;
