@@ -42,7 +42,6 @@ view: ft_transactions {
     label: "Souce Code"
     type: string
     sql: ${TABLE}."SOURCECODE_CD" ;;
-    hidden: yes
   }
 
   dimension_group: transactiondate_dt {
