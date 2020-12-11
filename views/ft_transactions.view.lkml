@@ -4,10 +4,9 @@ view: ft_transactions {
     ;;
 
   dimension: accountnumber_id {
-    label: "Account Number"
+    label: "SE Account Number"
     type: number
     sql: ${TABLE}."ACCOUNTNUMBER_ID" ;;
-    hidden: yes
   }
 
   dimension: email {
@@ -105,5 +104,20 @@ view: ft_transactions {
       year
     ]
     sql: ${donor_first_transactiondate.firsttransactiondate_raw} ;;
+  }
+  dimension: first_transaction_flag {
+    label: "Is First Donation"
+    type: yesno
+    sql: case when ${donor_first_transactiondate.firsttransactiondate_raw}=${transactiondate_dt_raw} then true else false end ;;
+  }
+  measure: lifetimevalue {
+    label: "Life Time Donation Amount"
+    type: number
+    sql: sum(${transactions_in_year_bv.transactionamount}) ;;
+  }
+  measure: lifetimecount {
+    label: "Life Time Donation Count"
+    type: number
+    sql: sum(${transactions_in_year_bv.transactioncount}) ;;
   }
 }
