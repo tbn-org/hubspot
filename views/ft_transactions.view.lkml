@@ -113,11 +113,11 @@ view: ft_transactions {
   measure: lifetimevalue {
     label: "Life Time Donation Amount"
     type: number
-    sql: sum(${transactions_in_year_bv.transactionamount}) ;;
+    sql: sum(${transactions_lifetime_bv.transactionamount}) ;;
   }
   measure: lifetimecount {
     label: "Life Time Donation Count"
     type: number
-    sql: sum(${transactions_in_year_bv.transactioncount}) ;;
+    sql: sum(${transactions_lifetime_bv.transactioncount}) ;;
   }
 }

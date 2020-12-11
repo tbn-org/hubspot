@@ -1,5 +1,5 @@
-view: transactions_in_year_bv {
-  sql_table_name: "DONOR"."TRANSACTIONS_IN_YEAR_BV"
+view: transactions_lifetime_bv {
+  sql_table_name: "DONOR"."TRANSACTIONS_LIFETIME_BV"
     ;;
 
   dimension: accountnumber_id {

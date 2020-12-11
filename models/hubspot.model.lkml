@@ -23,10 +23,10 @@ explore: ft_campaign{
     sql_on:${lt_emailcampaign_donation.accountnumber_id}=${src_accountmaster.account_number};;
     fields: []
   }
-  join: transactions_in_year_bv {
+  join: transactions_lifetime_bv {
     type: inner
     relationship: many_to_many
-    sql_on:${lt_emailcampaign_donation.accountnumber_id}=${transactions_in_year_bv.accountnumber_id};;
+    sql_on:${lt_emailcampaign_donation.accountnumber_id}=${transactions_lifetime_bv.accountnumber_id};;
     fields: []
   }
   join: ft_transactions {
