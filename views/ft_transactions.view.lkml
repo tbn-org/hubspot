@@ -106,11 +106,4 @@ view: ft_transactions {
     ]
     sql: ${donor_first_transactiondate.firsttransactiondate_raw} ;;
   }
-
-  dimension: lifetimevalue  {
-    type: string
-    label: "Lifetime Donation"
-    sql:  select "ACCOUNTNUMBER_ID",sum("AMOUNT_AMT")  from FT_TRANSACTIONS group by "ACCOUNTNUMBER_ID" source1
-        where source1."ACCOUNTNUMBER_ID"=src_accountmaster."AccountNumber" ;;
-  }
 }
