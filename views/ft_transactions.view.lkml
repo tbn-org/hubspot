@@ -111,6 +111,7 @@ view: ft_transactions {
     sql: case when ${donor_first_transactiondate.firsttransactiondate_raw}=${transactiondate_dt_raw} then true else false end ;;
   }
   measure: lifetimevalue {
+    value_format: "$#,##0"
     label: "Life Time Donation Amount"
     type: number
     sql: sum(${transactions_lifetime_bv.transactionamount}) ;;

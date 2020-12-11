@@ -3,6 +3,7 @@ view: ft_campaign {
   sql_table_name: "HUBSPOT"."FT_CAMPAIGN";;
 
   measure: avg_donation_amt {
+    value_format: "$#,##0"
     label: "Avg Donation Amount"
     type: number
     sql: ${donation_amt}/${donationcnt_nbr} ;;
@@ -51,6 +52,7 @@ view: ft_campaign {
   }
 
   measure: donation_amt {
+    value_format: "$#,##0"
     label: "Donation Amount"
     type: number
     sql: sum(${TABLE}."DONATION_AMT") ;;
@@ -81,6 +83,7 @@ view: ft_campaign {
   }
 
   measure: largest_donation_amt {
+    value_format: "$#,##0"
     label: "Largest Donation"
     type: number
     sql: max(${TABLE}."LARGEST_DONATION_AMT") ;;
