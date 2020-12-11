@@ -34,7 +34,6 @@ view: ft_transactions {
     primary_key: yes
     type: number
     sql: ${TABLE}."DOCUMENTNUMBER_ID" ;;
-    hidden: yes
   }
 
   dimension: txncategory_cd {
