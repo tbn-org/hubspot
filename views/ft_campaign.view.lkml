@@ -56,18 +56,21 @@ view: ft_campaign {
     label: "Donation Amount"
     type: number
     sql: sum(${TABLE}."DONATION_AMT") ;;
+    drill_fields: [ft_transactions.accountnumber_id,ft_transactions.documentnumber_id,ft_transactions.email,ft_transactions.sourcecode_cd,ft_transactions.amount_amt,ft_transactions.transactiondate_dt,ft_transactions.first_transaction_flag,ft_transactions.lifetimevalue,ft_transactions.lifetimecount]
   }
 
   measure: donationcnt_nbr {
     label: "Donation Count"
     type: number
     sql: sum(${TABLE}."DONATIONCNT_NBR") ;;
+    drill_fields: [ft_transactions.accountnumber_id,ft_transactions.documentnumber_id,ft_transactions.email,ft_transactions.sourcecode_cd,ft_transactions.amount_amt,ft_transactions.transactiondate_dt,ft_transactions.first_transaction_flag,ft_transactions.lifetimevalue,ft_transactions.lifetimecount]
   }
 
   measure: donorcnt_nbr {
     label: "Donor Count"
     type: number
     sql: sum(${TABLE}."DONORCNT_NBR") ;;
+    drill_fields: [ft_transactions.accountnumber_id,ft_transactions.documentnumber_id,ft_transactions.email,ft_transactions.sourcecode_cd,ft_transactions.amount_amt,ft_transactions.transactiondate_dt,ft_transactions.first_transaction_flag,ft_transactions.lifetimevalue,ft_transactions.lifetimecount]
   }
 
   measure: dropped_nbr {
