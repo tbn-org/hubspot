@@ -13,6 +13,11 @@ view: ft_campaign {
     label: "Bounced"
     type: number
     sql: sum(${TABLE}."BOUNCED_NBR") ;;
+    drill_fields: [src_emailcampaignevent.recipient_email,src_emailcampaignevent.created,src_emailcampaignevent.type]
+    link: {
+      label: "Show bounce event"
+      url: "{{ link }}&f[src_emailcampaignevent.type]=BOUNCE"
+    }
   }
 
   dimension: campaign_code {
@@ -39,7 +44,7 @@ view: ft_campaign {
     sql: sum(${TABLE}."CLICK_NBR") ;;
     drill_fields: [src_emailcampaignevent.recipient_email,src_emailcampaignevent.created,src_emailcampaignevent.type]
     link: {
-      label: "Cmapaign Event"
+      label: "Show click event"
       url: "{{ link }}&f[src_emailcampaignevent.type]=CLICK"
     }
   }
@@ -48,12 +53,22 @@ view: ft_campaign {
     label: "Deferred"
     type: number
     sql: sum(${TABLE}."DEFERRED_NBR") ;;
+    drill_fields: [src_emailcampaignevent.recipient_email,src_emailcampaignevent.created,src_emailcampaignevent.type]
+    link: {
+      label: "Show deferred event"
+      url: "{{ link }}&f[src_emailcampaignevent.type]=DEFERRED"
+    }
   }
 
   measure: delivered_nbr {
     label: "Delivered"
     type: number
     sql: sum(${TABLE}."DELIVERED_NBR") ;;
+    drill_fields: [src_emailcampaignevent.recipient_email,src_emailcampaignevent.created,src_emailcampaignevent.type]
+    link: {
+      label: "Show delivered event"
+      url: "{{ link }}&f[src_emailcampaignevent.type]=DELIVERED"
+    }
   }
 
   measure: donation_amt {
@@ -82,6 +97,11 @@ view: ft_campaign {
     label: "Dropped"
     type: number
     sql: sum(${TABLE}."DROPPED_NBR") ;;
+    drill_fields: [src_emailcampaignevent.recipient_email,src_emailcampaignevent.created,src_emailcampaignevent.type]
+    link: {
+      label: "Show dropped event"
+      url: "{{ link }}&f[src_emailcampaignevent.type]=DROPPED"
+    }
   }
 
   measure: included_nbr {
@@ -122,12 +142,22 @@ view: ft_campaign {
     label: "Open"
     type: number
     sql: sum(${TABLE}."OPEN_NBR") ;;
+    drill_fields: [src_emailcampaignevent.recipient_email,src_emailcampaignevent.created,src_emailcampaignevent.type]
+    link: {
+      label: "Show open event"
+      url: "{{ link }}&f[src_emailcampaignevent.type]=OPEN"
+    }
   }
 
   measure: processed_nbr {
     label: "Processed"
     type: number
     sql: sum(${TABLE}."PROCESSED_NBR") ;;
+    drill_fields: [src_emailcampaignevent.recipient_email,src_emailcampaignevent.created,src_emailcampaignevent.type]
+    link: {
+      label: "Show processed event"
+      url: "{{ link }}&f[src_emailcampaignevent.type]=PROCESSED"
+    }
   }
 
   measure: queued_nbr {
@@ -140,6 +170,11 @@ view: ft_campaign {
     label: "Sent"
     type: number
     sql: sum(${TABLE}."SENT_NBR") ;;
+    drill_fields: [src_emailcampaignevent.recipient_email,src_emailcampaignevent.created,src_emailcampaignevent.type]
+    link: {
+      label: "Show sent event"
+      url: "{{ link }}&f[src_emailcampaignevent.type]=SENT"
+    }
   }
 
   measure: statuschanged_nbr {
