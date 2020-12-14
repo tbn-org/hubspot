@@ -47,4 +47,9 @@ explore: ft_campaign{
     sql_on: ${ft_transactions.documentnumber_id} = ${ft_transactions_pre_after_bv.documentnumber_id};;
     fields: []
   }
+  join: src_emailcampaignevent {
+    type: left_outer
+    relationship: one_to_many
+    sql_on:${ft_campaign.campaign_id}=${src_emailcampaignevent.campaign_id};;
+  }
 }
