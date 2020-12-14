@@ -37,6 +37,11 @@ view: ft_campaign {
     label: "Clicked"
     type: number
     sql: sum(${TABLE}."CLICK_NBR") ;;
+    drill_fields: [src_emailcampaignevent.recipient_email,src_emailcampaignevent.created,src_emailcampaignevent.type]
+    link: {
+      label: "Cmapaign Event"
+      url: "{{ link }}&f[src_emailcampaignevent.type]=CLICK"
+    }
   }
 
   measure: deferred_nbr {
