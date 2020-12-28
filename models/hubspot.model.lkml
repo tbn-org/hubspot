@@ -15,7 +15,7 @@ explore: ft_campaign{
   join: src_contacts_id {
     type: left_outer
     relationship: many_to_one
-    sql_on: ${lt_emailcampaign_donation.vid} = ${lt_emailcampaign_donation.vid};;
+    sql_on: ${src_contacts_id.vid} = ${lt_emailcampaign_donation.vid};;
   }
   join: src_accountmaster {
     type: inner
