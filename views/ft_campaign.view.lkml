@@ -20,6 +20,13 @@ view: ft_campaign {
     }
   }
 
+  dimension: uniquekey {
+    primary_key: yes
+    label: "Unique Key"
+    type: number
+    sql: ${TABLE}."UNIQUEKEY" ;;
+  }
+
   dimension: campaign_code {
     label: "Campaign Code"
     type: string
