@@ -23,7 +23,7 @@ view: ft_campaign {
   dimension: uniquekey {
     primary_key: yes
     label: "Unique Key"
-    type: number
+    type: string
     sql: ${TABLE}."UNIQUEKEY" ;;
   }
 
@@ -81,8 +81,8 @@ view: ft_campaign {
   measure: donation_amt {
     value_format: "$#,##0"
     label: "Donation Amount"
-    type: sum
-    sql: ${ft_transactions.amount_amt} ;;
+    type: number
+    sql: sum(${ft_transactions.amount_amt}) ;;
     drill_fields: [ft_transactions.accountnumber_id,ft_transactions.documentnumber_id,ft_transactions.email,ft_transactions.sourcecode_cd,ft_transactions.amount_amt,ft_transactions.transactiondate_dt,ft_transactions.first_transaction_flag,ft_transactions.lifetimevalue,ft_transactions.lifetimecount]
   }
 
