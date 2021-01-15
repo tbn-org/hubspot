@@ -74,22 +74,22 @@ view: ft_campaign {
   measure: donation_amt {
     value_format: "$#,##0"
     label: "Donation Amount"
-    type: number
-    sql: sum(${TABLE}."DONATION_AMT") ;;
+    type: sum
+    sql: ${ft_transactions.amount_amt} ;;
     drill_fields: [ft_transactions.accountnumber_id,ft_transactions.documentnumber_id,ft_transactions.email,ft_transactions.sourcecode_cd,ft_transactions.amount_amt,ft_transactions.transactiondate_dt,ft_transactions.first_transaction_flag,ft_transactions.lifetimevalue,ft_transactions.lifetimecount]
   }
 
   measure: donationcnt_nbr {
     label: "Donation Count"
-    type: number
-    sql: sum(${TABLE}."DONATIONCNT_NBR") ;;
+    type: count_distinct
+    sql: ${ft_transactions.documentnumber_id} ;;
     drill_fields: [ft_transactions.accountnumber_id,ft_transactions.documentnumber_id,ft_transactions.email,ft_transactions.sourcecode_cd,ft_transactions.amount_amt,ft_transactions.transactiondate_dt,ft_transactions.first_transaction_flag,ft_transactions.lifetimevalue,ft_transactions.lifetimecount]
   }
 
   measure: donorcnt_nbr {
     label: "Donor Count"
-    type: number
-    sql: sum(${TABLE}."DONORCNT_NBR") ;;
+    type: count_distinct
+    sql: ${ft_transactions.accountnumber_id} ;;
     drill_fields: [ft_transactions.accountnumber_id,ft_transactions.documentnumber_id,ft_transactions.email,ft_transactions.sourcecode_cd,ft_transactions.amount_amt,ft_transactions.transactiondate_dt,ft_transactions.first_transaction_flag,ft_transactions.lifetimevalue,ft_transactions.lifetimecount]
   }
 
