@@ -201,4 +201,25 @@ view: ft_campaign {
     type: string
     sql: ${TABLE}."UTM_CAMPAIGN" ;;
   }
+
+  filter: huckabeehat{
+    label: "Huckabee Hat"
+    type: yesno
+    sql:  case when ${TABLE}."CAMPAIGN_ID" in (select distinct "CampaignId" from "HUBSPOT"."SRC_EMAILCAMPAIGNEVENT" where
+          "Url" LIKE '%https://www.tbn.org/huckabeehat%') then true else false end;;
+  }
+
+  filter: huckabeemub{
+    label: "Huckabee Mug"
+    type: yesno
+    sql:  case when ${TABLE}."CAMPAIGN_ID" in (select distinct "CampaignId" from "HUBSPOT"."SRC_EMAILCAMPAIGNEVENT" where
+      "Url" LIKE '%https://www.tbn.org/huckabeemug%') then true else false end;;
+  }
+
+  filter: huckabeesimple{
+    label: "Huckabee Simple"
+    type: yesno
+    sql:  case when ${TABLE}."CAMPAIGN_ID" in (select distinct "CampaignId" from "HUBSPOT"."SRC_EMAILCAMPAIGNEVENT" where
+      "Url" LIKE '%https://www.tbn.org/simple%') then true else false end;;
+  }
 }
