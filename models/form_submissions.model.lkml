@@ -6,4 +6,9 @@ explore: ft_formsubmissions{
   persist_for: "8 hour"
   label: "Form Submissions"
   description: "Form Submissions"
+  join: src_contacts_id {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${src_contacts_id.vid} = ${ft_formsubmissions.vid};;
+  }
 }

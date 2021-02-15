@@ -41,4 +41,10 @@ view: src_contacts_id {
     value_format_name: id
     sql: ${TABLE}."VID" ;;
   }
+
+  dimension: cellphone {
+    label: "Phone Number"
+    type: string
+    sql: ${TABLE}."CellPhone" ;;
+  }
 }

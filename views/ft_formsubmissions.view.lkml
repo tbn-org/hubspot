@@ -46,7 +46,7 @@ view: ft_formsubmissions {
   }
 
   dimension: ronumber_cd {
-    label: "RO Number"
+    label: "MRO"
     type: string
     sql: ${TABLE}."RONUMBER_CD" ;;
   }
@@ -55,6 +55,12 @@ view: ft_formsubmissions {
     label: "State"
     type: string
     sql: ${TABLE}."STATE_CD" ;;
+  }
+
+  dimension: country_cd {
+    label: "Country"
+    type: string
+    sql: case when ${TABLE}."PASSVALIDATION" then 'USA' else '' END;;
   }
 
   dimension_group: submission_timestamp {
@@ -76,6 +82,20 @@ view: ft_formsubmissions {
     label: "Zip Code"
     type: string
     sql: ${TABLE}."ZIP_CD" ;;
+  }
+
+  dimension: vid {
+    label: "Contact ID"
+    type: string
+    sql: ${TABLE}."VID" ;;
+  }
+
+  dimension: smsconscent {
+    label: "SMS Conscent"
+    type: string
+    sql: case when ${TABLE}."SMSCONSCENT"='t' then 'Yes'
+              when ${TABLE}."SMSCONSCENT"='f' then 'No'
+              else 'N/A' end;;
   }
 
   measure: count {

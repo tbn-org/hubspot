@@ -52,4 +52,9 @@ explore: ft_campaign{
     relationship: one_to_many
     sql_on:${ft_campaign.campaign_id}=${src_emailcampaignevent.campaign_id};;
   }
+  join: ft_formsubmissions {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${src_contacts_id.vid} = ${ft_formsubmissions.vid};;
+  }
 }
