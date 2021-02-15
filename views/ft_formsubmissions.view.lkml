@@ -3,12 +3,6 @@ view: ft_formsubmissions {
   sql_table_name: "HUBSPOT"."FT_FORMSUBMISSIONS"
     ;;
 
-  dimension: address_cd {
-    label: "Address"
-    type: string
-    sql: ${TABLE}."ADDRESS_CD" ;;
-  }
-
   dimension: city_cd {
     label: "City"
     type: string
@@ -37,12 +31,6 @@ view: ft_formsubmissions {
     label: "Last Name"
     type: string
     sql: ${TABLE}."LASTNAME_CD" ;;
-  }
-
-  dimension: mobilephone_cd {
-    label: "Mobile Phone"
-    type: string
-    sql: ${TABLE}."MOBILEPHONE_CD" ;;
   }
 
   dimension: ronumber_cd {
