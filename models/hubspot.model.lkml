@@ -56,5 +56,6 @@ explore: ft_campaign{
     type: left_outer
     relationship: many_to_one
     sql_on: ${src_contacts_id.vid} = ${ft_formsubmissions.vid};;
+    fields: []
   }
 }
