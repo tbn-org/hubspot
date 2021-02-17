@@ -45,7 +45,7 @@ view: ft_formsubmissions {
   }
 
   dimension: ronumber_cd {
-    label: "MRO"
+    label: "RO Number"
     type: string
     sql: ${TABLE}."RONUMBER_CD" ;;
   }
@@ -78,7 +78,7 @@ view: ft_formsubmissions {
   }
 
   dimension: zip_cd {
-    label: "Zip Code"
+    label: "Postal Code"
     type: string
     sql: ${TABLE}."ZIP_CD" ;;
   }
