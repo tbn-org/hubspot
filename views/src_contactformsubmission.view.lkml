@@ -1,4 +1,5 @@
 view: src_contactformsubmission {
+  label: "Form Submission"
   sql_table_name: "HUBSPOT"."SRC_CONTACTFORMSUBMISSION"
     ;;
 
