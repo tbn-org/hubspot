@@ -7,6 +7,7 @@ explore: ft_formsubmissions{
   label: "Form Submissions"
   description: "Form Submissions"
   join: src_contacts_id {
+    view_label: "Contacts"
     type: left_outer
     relationship: many_to_one
     sql_on: ${src_contacts_id.vid} = ${ft_formsubmissions.vid};;
