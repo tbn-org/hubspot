@@ -54,8 +54,13 @@ explore: ft_campaign{
   }
   join: ft_formsubmissions {
     type: left_outer
-    relationship: many_to_one
+    relationship: one_to_many
     sql_on: ${src_contacts_id.vid} = ${ft_formsubmissions.vid};;
     fields: []
+  }
+  join: src_contactformsubmission {
+    type: left_outer
+    relationship: one_to_many
+    sql_on: ${src_contacts_id.vid} = ${src_contactformsubmission.vid};;
   }
 }
