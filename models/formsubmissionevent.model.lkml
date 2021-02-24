@@ -4,8 +4,7 @@ include: "/views/*.view"
 
 explore:src_contacts_id {
   persist_for: "8 hour"
-  label: "Contacts"
-  description: "Form Submission Events"
+  description: "Contacts"
   join: src_contactformsubmission {
     view_label: "Form Submission Events"
     type: left_outer
@@ -24,6 +23,5 @@ explore:src_contacts_id {
     type: left_outer
     relationship: many_to_many
     sql_on: ${src_contacts_id.vid} = ${src_contactlistmembers.vid};;
-    fields: []
   }
 }
