@@ -8,7 +8,7 @@ explore:src_contacts_id {
   view_label: "Contacts"
   description: "Contacts"
   join: src_contactformsubmission {
-    view_label: "Form Submission Events"
+    view_label: "Form Submission"
     type: left_outer
     relationship: one_to_many
     sql_on: ${src_contacts_id.vid} = ${src_contactformsubmission.vid};;
@@ -32,5 +32,6 @@ explore:src_contacts_id {
     type: left_outer
     relationship: many_to_many
     sql_on: ${src_contactlists.list_id} = ${src_contactlistmembers.list_id};;
+    fields: []
   }
 }

@@ -29,6 +29,11 @@ view: src_contacts_id {
     sql: ${TABLE}."Last Name" ;;
   }
 
+  dimension: list_name {
+    type: string
+    sql: ${src_contactlists.name} ;;
+  }
+
   dimension: list_memberships_aggregate {
     type: string
     sql: ${TABLE}."ListMembershipsAggregate" ;;

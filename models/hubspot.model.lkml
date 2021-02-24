@@ -59,4 +59,18 @@ explore: ft_campaign{
     sql_on: ${src_contacts_id.vid} = ${ft_formsubmissions.vid};;
     fields: []
   }
+  join: src_contactlistmembers {
+    view_label: "Contact List"
+    type: left_outer
+    relationship: many_to_many
+    sql_on: ${src_contacts_id.vid} = ${src_contactlistmembers.vid};;
+    fields: []
+  }
+  join: src_contactlists {
+    view_label: "Contact List"
+    type: left_outer
+    relationship: many_to_many
+    sql_on: ${src_contactlists.list_id} = ${src_contactlistmembers.list_id};;
+    fields: []
+  }
 }
