@@ -154,7 +154,9 @@ view: src_emailcampaignevent {
   }
 
   measure: count {
-    type: count
+    label: "Submission Count"
+    type: count_distinct
+    sql:  ${TABLE}."Id";;
     drill_fields: [id, browser_name, app_name]
   }
 }

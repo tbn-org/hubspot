@@ -53,4 +53,10 @@ view: src_contacts_id {
     type: string
     sql: ${TABLE}."CellPhone" ;;
   }
+  measure: count {
+    label: "Contact Count"
+    type: count_distinct
+    sql: ${TABLE}."VID" ;;
+    drill_fields: []
+  }
 }
