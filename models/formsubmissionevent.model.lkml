@@ -5,6 +5,7 @@ include: "/views/*.view"
 explore:src_contacts_id {
   persist_for: "8 hour"
   label: "Contacts"
+  view_label: "Contacts"
   description: "Contacts"
   join: src_contactformsubmission {
     view_label: "Form Submission Events"
