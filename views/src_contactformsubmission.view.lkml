@@ -18,6 +18,12 @@ view: src_contactformsubmission {
     sql: ${TABLE}."FORMID" ;;
   }
 
+  dimension: formname {
+    label: "Form Name"
+    type: string
+    sql: ${src_forms.name} ;;
+  }
+
   dimension: formtype {
     type: string
     sql: ${TABLE}."FORMTYPE" ;;

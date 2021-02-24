@@ -12,4 +12,11 @@ explore: src_contactformsubmission{
     relationship: many_to_one
     sql_on: ${src_contacts_id.vid} = ${src_contactformsubmission.vid};;
   }
+  join: src_forms {
+    view_label: "Forms"
+    type: inner
+    relationship: many_to_one
+    sql_on: ${src_forms.guid} = ${src_contactformsubmission.formid};;
+    fields: []
+  }
 }
