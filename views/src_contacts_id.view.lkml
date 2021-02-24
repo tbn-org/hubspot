@@ -1,5 +1,5 @@
 view: src_contacts_id {
-  view_label: "HS Contact (donation)"
+  view_label: "HS Contact"
   sql_table_name: "HUBSPOT"."SRC_CONTACTS_ID" ;;
 
   dimension: email {
