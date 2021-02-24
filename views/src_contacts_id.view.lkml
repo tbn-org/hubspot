@@ -30,6 +30,7 @@ view: src_contacts_id {
   }
 
   dimension: list_name {
+    label: "Contact List Name"
     type: string
     sql: ${src_contactlists.name} ;;
   }
