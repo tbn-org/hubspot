@@ -4,6 +4,7 @@ view: src_contactformsubmission {
     ;;
 
   dimension: contenttype {
+    label: "Content Type"
     type: string
     sql: ${TABLE}."CONTENTTYPE" ;;
   }
@@ -11,46 +12,54 @@ view: src_contactformsubmission {
   dimension: conversionid {
     type: string
     sql: ${TABLE}."CONVERSIONID" ;;
+    hidden: yes
   }
 
   dimension: formid {
+    label: "Form ID"
     type: string
     sql: ${TABLE}."FORMID" ;;
   }
 
   dimension: formname {
-    label: "Form Name"
+    label: "Form Name (Title)"
     type: string
     sql: ${src_forms.name} ;;
   }
 
   dimension: formtype {
+    label: "Form Type"
     type: string
     sql: ${TABLE}."FORMTYPE" ;;
   }
 
   dimension: pageid {
+    label: "Page ID"
     type: string
     sql: ${TABLE}."PAGEID" ;;
   }
 
   dimension: pagetitle {
+    label: "Page Title"
     type: string
     sql: ${TABLE}."PAGETITLE" ;;
   }
 
   dimension: pageurl {
+    label: "Page URL"
     type: string
     sql: ${TABLE}."PAGEURL" ;;
   }
 
   dimension: portalid {
+    label: "Portal ID"
     type: number
     value_format_name: id
     sql: ${TABLE}."PORTALID" ;;
   }
 
   dimension_group: submissiontime {
+    label: "Submission Time"
     type: time
     timeframes: [
       raw,
@@ -64,12 +73,8 @@ view: src_contactformsubmission {
     sql: ${TABLE}."SUBMISSIONTIME" ;;
   }
 
-  dimension: title {
-    type: string
-    sql: ${TABLE}."TITLE" ;;
-  }
-
   dimension: vid {
+    label: "Contact ID"
     type: number
     value_format_name: id
     sql: ${TABLE}."VID" ;;
