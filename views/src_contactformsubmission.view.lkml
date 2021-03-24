@@ -58,18 +58,9 @@ view: src_contactformsubmission {
     sql: ${TABLE}."PORTALID" ;;
   }
 
-  dimension_group: submissiontime {
+  dimension: submissiontime {
     label: "Submission Time"
-    type: time
-    timeframes: [
-      raw,
-      time,
-      date,
-      week,
-      month,
-      quarter,
-      year
-    ]
+    type: date_time
     sql: ${TABLE}."SUBMISSIONTIME" ;;
   }
 
@@ -78,6 +69,20 @@ view: src_contactformsubmission {
     type: number
     value_format_name: id
     sql: ${TABLE}."VID" ;;
+  }
+
+  dimension: fbcamapignid {
+    label: "FB Campaign ID"
+    type: number
+    value_format_name: id
+    sql: ${TABLE}."FBCAMPAIGNID" ;;
+  }
+
+  dimension: fbadid {
+    label: "FB Ad ID"
+    type: number
+    value_format_name: id
+    sql: ${TABLE}."FBADID" ;;
   }
 
   measure: count {

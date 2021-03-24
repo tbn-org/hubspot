@@ -1,10 +1,10 @@
 connection: "snowflake_tbn_dev"
-label: "Hubspot"
+label: "Marketing"
 include: "/views/*.view"
 
 explore: ft_campaign{
   persist_for: "8 hour"
-  label: "Campaign & Donation"
+  label: "Hubspot Campaign & Donation"
   description: "Campaign & Donation"
   join: lt_emailcampaign_donation {
     type: left_outer
@@ -34,6 +34,12 @@ explore: ft_campaign{
     type: inner
     relationship: many_to_one
     sql_on:${lt_emailcampaign_donation.documentnumber_id}=${ft_transactions.documentnumber_id};;
+  }
+  join: src_addtrandata {
+    type: left_outer
+    relationship: one_to_one
+    sql_on:${src_addtrandata.document_number}=${ft_transactions.documentnumber_id};;
+    fields: []
   }
   join: donor_first_transactiondate {
     from: donor_first_last_transactiondate_bv

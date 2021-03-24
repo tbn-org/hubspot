@@ -1,4 +1,5 @@
-view: ft_transactions {
+view: ft_transactions_all
+{
   view_label: "Donation"
   sql_table_name: "DONOR"."FT_TRANSACTIONS"
     ;;
@@ -7,12 +8,6 @@ view: ft_transactions {
     label: "SE Account Number"
     type: number
     sql: ${TABLE}."ACCOUNTNUMBER_ID" ;;
-  }
-
-  dimension: email {
-    label: "Email"
-    type: string
-    sql: ${lt_emailcampaign_donation.email} ;;
   }
 
   dimension: amount_amt {

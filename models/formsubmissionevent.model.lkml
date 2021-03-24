@@ -1,10 +1,10 @@
 connection: "snowflake_tbn_dev"
-label: "Hubspot"
+label: "Marketing"
 include: "/views/*.view"
 
 explore:src_contacts_id {
   persist_for: "8 hour"
-  label: "Contacts"
+  label: "Hubspot Contacts"
   view_label: "Contacts"
   description: "Contacts"
   join: src_contactformsubmission {

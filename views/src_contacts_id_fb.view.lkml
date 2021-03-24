@@ -1,4 +1,4 @@
-view: src_contacts_id {
+view: src_contacts_id_fb {
   view_label: "HS Contact"
   sql_table_name: "HUBSPOT"."SRC_CONTACTS_ID" ;;
 
@@ -52,6 +52,33 @@ view: src_contacts_id {
     label: "Phone Number"
     type: string
     sql: ${TABLE}."CellPhone" ;;
+  }
+
+  dimension: fbformsubmissiondate {
+    label: "FB Submission Date"
+    type: string
+    sql: ${src_contactformsubmission.submissiontime} ;;
+  }
+
+  dimension: fromFB {
+    label: "Originated from FB"
+    type: yesno
+    sql: case when ${src_contactformsubmission.submissiontime}<=${ft_transactions_all.first_transactiondate_dt_date} then true else false end ;;
+  }
+
+  dimension_group: submissiontime {
+    label: "Submission Time"
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    sql: ${src_contactformsubmission.submissiontime} ;;
   }
 
   measure: count {
