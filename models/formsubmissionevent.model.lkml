@@ -1,5 +1,5 @@
 connection: "snowflake_tbn_dev"
-label: "Marketing"
+label: "Hubspot"
 include: "/views/*.view"
 
 explore:src_contacts_id {
