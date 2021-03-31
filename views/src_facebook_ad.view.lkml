@@ -58,6 +58,7 @@ view: src_facebook_ad {
 
   dimension_group: created {
     type: time
+    label: "Created"
     timeframes: [
       raw,
       time,
@@ -68,6 +69,38 @@ view: src_facebook_ad {
       year
     ]
     sql: ${TABLE}."CreatedTime" ;;
+  }
+
+  dimension_group: date_start {
+    type: time
+    label: "Start"
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    convert_tz: no
+    datatype: date
+    sql:${src_facebook_adinsight.date_start_raw} ;;
+  }
+
+  dimension_group: date_end {
+    type: time
+    label: "End"
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    convert_tz: no
+    datatype: date
+    sql: ${src_facebook_adinsight.date_end_raw}  ;;
   }
 
   dimension: failed_delivery_checks {
