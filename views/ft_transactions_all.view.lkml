@@ -105,11 +105,6 @@ view: ft_transactions_all
     ]
     sql: ${donor_first_transactiondate.firsttransactiondate_raw} ;;
   }
-  dimension: first_transaction_flag {
-    label: "Is First Donation"
-    type: yesno
-    sql: case when ${donor_first_transactiondate.firsttransactiondate_raw}=${transactiondate_dt_raw} then true else false end ;;
-  }
   measure: lifetimevalue {
     value_format: "$#,##0"
     label: "Life Time Donation Amount"
