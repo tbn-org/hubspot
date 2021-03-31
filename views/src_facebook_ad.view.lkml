@@ -134,11 +134,6 @@ view: src_facebook_ad {
     sql: ${src_facebook_adinsight.buying_type} ;;
   }
 
-  dimension: checkins {
-    type: number
-    sql: ${src_facebook_adinsight.checkins} ;;
-  }
-
   dimension: clicks {
     type: number
     sql: ${src_facebook_adinsight.clicks} ;;
@@ -209,11 +204,6 @@ view: src_facebook_ad {
     sql: ${src_facebook_adinsight.estimated_ad_recallers} ;;
   }
 
-  dimension: event_responses {
-    type: number
-    sql: ${src_facebook_adinsight.event_responses} ;;
-  }
-
   dimension: frequency {
     type: number
     sql: ${src_facebook_adinsight.frequency} ;;
@@ -239,69 +229,9 @@ view: src_facebook_ad {
     sql: ${src_facebook_adinsight.inline_post_engagement} ;;
   }
 
-  dimension: link_clicks {
-    type: number
-    sql: ${src_facebook_adinsight.link_clicks} ;;
-  }
-
   dimension: objective {
     type: string
     sql: ${src_facebook_adinsight.objective} ;;
-  }
-
-  dimension: offer_saves {
-    type: number
-    sql: ${src_facebook_adinsight.offer_saves} ;;
-  }
-
-  dimension: outbound_clicks {
-    type: number
-    sql: ${src_facebook_adinsight.outbound_clicks} ;;
-  }
-
-  dimension: page_engagements {
-    type: number
-    sql: ${src_facebook_adinsight.page_engagements} ;;
-  }
-
-  dimension: page_likes {
-    type: number
-    sql: ${src_facebook_adinsight.page_likes} ;;
-  }
-
-  dimension: page_mentions {
-    type: number
-    sql: ${src_facebook_adinsight.page_mentions} ;;
-  }
-
-  dimension: page_photo_views {
-    type: number
-    sql: ${src_facebook_adinsight.page_photo_views} ;;
-  }
-
-  dimension: page_tab_views {
-    type: number
-    sql: ${src_facebook_adinsight.page_tab_views} ;;
-  }
-
-  dimension: post_comments {
-    type: number
-    sql: ${src_facebook_adinsight.post_comments} ;;
-  }
-
-  dimension: post_engagements {
-    type: number
-    sql: ${src_facebook_adinsight.post_engagements} ;;
-  }
-
-  dimension: post_reactions {
-    type: number
-    sql: ${src_facebook_adinsight.post_reactions} ;;
-  }
-
-  dimension: post_shares {
-    type: number
-    sql: ${src_facebook_adinsight.post_shares} ;;
   }
 
   dimension: quality_ranking {
