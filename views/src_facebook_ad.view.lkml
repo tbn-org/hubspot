@@ -275,6 +275,7 @@ view: src_facebook_ad {
   }
 
   measure: count {
+    label: "Ad Count"
     type: count
     drill_fields: [id, name]
   }
