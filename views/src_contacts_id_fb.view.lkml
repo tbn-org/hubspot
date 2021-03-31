@@ -61,7 +61,7 @@ view: src_contacts_id_fb {
   }
 
   dimension: fromFB {
-    label: "Originated from FB"
+    label: "Likely Originated from FB"
     type: yesno
     sql: case when ${src_contactformsubmission.submissiontime}<=${ft_transactions_all.first_transactiondate_dt_date} then true else false end ;;
   }
