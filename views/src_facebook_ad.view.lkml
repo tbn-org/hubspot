@@ -5,14 +5,10 @@ view: src_facebook_ad {
   drill_fields: [id]
 
   dimension: id {
+    label: "Ad ID"
     primary_key: yes
     type: string
     sql: ${TABLE}."ID" ;;
-  }
-
-  dimension: ad_creative_id {
-    type: string
-    sql: ${TABLE}."AdCreativeId" ;;
   }
 
   dimension: ad_set_id {
