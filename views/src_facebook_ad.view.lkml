@@ -134,8 +134,8 @@ view: src_facebook_ad {
     sql: ${src_facebook_adinsight.buying_type} ;;
   }
 
-  dimension: clicks {
-    type: number
+  measure: clicks {
+    type: sum
     sql: ${src_facebook_adinsight.clicks} ;;
   }
 
@@ -144,48 +144,57 @@ view: src_facebook_ad {
     sql: ${src_facebook_adinsight.conversion_rate_ranking} ;;
   }
 
-  dimension: cost_per_estimated_ad_recallers {
+  measure: cost_per_estimated_ad_recallers {
     type: number
-    sql: ${src_facebook_adinsight.cost_per_estimated_ad_recallers} ;;
+    value_format: "#.000"
+    sql: div0(${spend},${estimated_ad_recallers});;
   }
 
-  dimension: cost_per_inline_link_click {
+  measure: cost_per_inline_link_click {
     type: number
-    sql: ${src_facebook_adinsight.cost_per_inline_link_click} ;;
+    value_format: "#.000"
+    sql: div0(${spend},${inline_link_clicks});;
   }
 
-  dimension: cost_per_inline_post_engagement {
+  measure: cost_per_inline_post_engagement {
     type: number
-    sql: ${src_facebook_adinsight.cost_per_inline_post_engagement} ;;
+    value_format: "#.000"
+    sql: div0(${spend},${inline_post_engagement});;
   }
 
-  dimension: cost_per_unique_click {
+  measure: cost_per_unique_click {
     type: number
-    sql: ${src_facebook_adinsight.cost_per_unique_click} ;;
+    value_format: "#.00"
+    sql: div0(${spend},${unique_clicks}) ;;
   }
 
-  dimension: cost_per_unique_inline_link_click {
+  measure: cost_per_unique_inline_link_click {
     type: number
-    sql: ${src_facebook_adinsight.cost_per_unique_inline_link_click} ;;
+    value_format: "#.000"
+    sql: div0(${spend},${unique_inline_link_clicks}) ;;
   }
 
-  dimension: cpc {
+  measure: cpc {
     type: number
-    sql: ${src_facebook_adinsight.cpc} ;;
+    value_format: "#.000"
+    sql: div0(${spend},${clicks}) ;;
   }
 
-  dimension: cpm {
+  measure: cpm {
     type: number
-    sql: ${src_facebook_adinsight.cpm} ;;
+    value_format: "#.000"
+    sql: div0(${spend},${impressions})*1000 ;;
   }
 
-  dimension: cpp {
+  measure: cpp {
     type: number
-    sql: ${src_facebook_adinsight.cpp} ;;
+    value_format: "#.000"
+    sql: div0(${spend},${reach})*1000 ;;
   }
 
   dimension: ctr {
     type: number
+    value_format: "#.000"
     sql: ${src_facebook_adinsight.ctr} ;;
   }
 
@@ -199,8 +208,8 @@ view: src_facebook_ad {
     sql: ${src_facebook_adinsight.estimated_ad_recall_rate} ;;
   }
 
-  dimension: estimated_ad_recallers {
-    type: number
+  measure: estimated_ad_recallers {
+    type: sum
     sql: ${src_facebook_adinsight.estimated_ad_recallers} ;;
   }
 
@@ -209,23 +218,23 @@ view: src_facebook_ad {
     sql: ${src_facebook_adinsight.frequency} ;;
   }
 
-  dimension: impressions {
-    type: number
+  measure: impressions {
+    type: sum
     sql: ${src_facebook_adinsight.impressions} ;;
   }
 
-  dimension: inline_link_clicks {
-    type: number
+  measure: inline_link_clicks {
+    type: sum
     sql: ${src_facebook_adinsight.inline_link_clicks} ;;
   }
 
-  dimension: inline_link_clicks_counter {
-    type: number
+  measure: inline_link_clicks_counter {
+    type: sum
     sql: ${src_facebook_adinsight.inline_link_clicks_counter} ;;
   }
 
-  dimension: inline_post_engagement {
-    type: number
+  measure: inline_post_engagement {
+    type: sum
     sql: ${src_facebook_adinsight.inline_post_engagement} ;;
   }
 
@@ -239,23 +248,23 @@ view: src_facebook_ad {
     sql: ${src_facebook_adinsight.quality_ranking} ;;
   }
 
-  dimension: reach {
-    type: number
+  measure: reach {
+    type: sum
     sql: ${src_facebook_adinsight.reach} ;;
   }
 
-  dimension: spend {
-    type: number
+  measure: spend {
+    type: sum
     sql: ${src_facebook_adinsight.spend} ;;
   }
 
-  dimension: target {
-    type: string
+  measure: target {
+    type: sum
     sql: ${src_facebook_adinsight.target} ;;
   }
 
-  dimension: unique_clicks {
-    type: number
+  measure: unique_clicks {
+    type: sum
     sql: ${src_facebook_adinsight.unique_clicks} ;;
   }
 
@@ -264,13 +273,13 @@ view: src_facebook_ad {
     sql: ${src_facebook_adinsight.unique_ctr} ;;
   }
 
-  dimension: unique_inline_link_click_counter {
-    type: number
+  measure: unique_inline_link_click_counter {
+    type: sum
     sql: ${src_facebook_adinsight.unique_inline_link_click_counter} ;;
   }
 
-  dimension: unique_inline_link_clicks {
-    type: number
+  measure: unique_inline_link_clicks {
+    type: sum
     sql: ${src_facebook_adinsight.unique_inline_link_clicks} ;;
   }
 
