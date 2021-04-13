@@ -35,6 +35,21 @@ view: src_contacts_id {
     sql: ${src_contactlists.name} ;;
   }
 
+  dimension_group: time_added_to_list {
+    label: "Time Added to List"
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    sql: ${src_contactlistmembers.time_added_to_list_raw} ;;
+  }
+
   dimension: list_memberships_aggregate {
     type: string
     sql: ${TABLE}."ListMembershipsAggregate" ;;
