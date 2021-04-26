@@ -7,6 +7,11 @@ view: google_adword_donations_bv {
     sql: ${TABLE}."ACCOUNT_ID" ;;
   }
 
+  dimension: transaction_date {
+    type: date
+    sql: ${TABLE}."TRANSACTION_DATE" ;;
+  }
+
   dimension: kv_name {
     type: string
     sql: ${TABLE}."KV_NAME" ;;
