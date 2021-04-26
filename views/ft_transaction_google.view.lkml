@@ -34,8 +34,8 @@ view: ft_transactions_google
   measure: donation_count {
     value_format: "#,##0"
     label: "Donation Count"
-    type: count_distinct
-    sql: ${TABLE}."DOCUMENTNUMBER_ID" ;;
+    type: sum
+    sql: count(${TABLE}."DOCUMENTNUMBER_ID") ;;
   }
 
   dimension: txncategory_cd {
