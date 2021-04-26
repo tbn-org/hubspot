@@ -1,4 +1,4 @@
-view: ft_transactions_all
+view: ft_transactions_google
 {
   view_label: "Donation"
   sql_table_name: "DONOR"."FT_TRANSACTIONS"
@@ -111,6 +111,11 @@ view: ft_transactions_all
       year
     ]
     sql: ${donor_first_transactiondate.firsttransactiondate_raw} ;;
+  }
+  dimension: first_transaction_flag {
+    label: "Is First Donation"
+    type: yesno
+    sql: case when ${donor_first_transactiondate.firsttransactiondate_raw}=${transactiondate_dt_raw} then true else false end ;;
   }
   measure: lifetimevalue {
     value_format: "$#,##0"
