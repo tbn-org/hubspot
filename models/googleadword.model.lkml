@@ -11,7 +11,7 @@ explore:src_google_adwords_adperformance
   join: google_adword_donations_bv {
     type: left_outer
     relationship: many_to_many
-    sql_on:${src_google_adwords_adperformance.id}=${google_adword_donations_bv.kv_value} and ${google_adword_donations_bv.kv_name}='hsa_ad' and ${src_google_adwords_adperformance.date_date}>=${google_adword_donations_bv.transaction_date};;
+    sql_on:${src_google_adwords_adperformance.id}=${google_adword_donations_bv.kv_value} and ${google_adword_donations_bv.kv_name}='hsa_ad' and ${src_google_adwords_adperformance.date_date}<=${google_adword_donations_bv.transaction_date};;
     fields: []
   }
   join: src_addtrandata {
