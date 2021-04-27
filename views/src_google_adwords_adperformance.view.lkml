@@ -5,6 +5,7 @@ view: src_google_adwords_adperformance {
   drill_fields: [id]
 
   dimension: id {
+    label: "Ad ID"
     primary_key: yes
     type: number
     sql: ${TABLE}."Id" ;;
