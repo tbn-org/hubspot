@@ -42,6 +42,7 @@ view: src_google_adwords_adperformance {
   }
 
   measure: cost {
+    value_format: "$#,##0.0"
     type: number
     sql: sum(${TABLE}."Cost") ;;
   }
