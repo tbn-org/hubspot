@@ -36,13 +36,13 @@ view: src_google_adwords_adperformance {
   }
 
   measure: clicks {
-    type: sum
-    sql: ${TABLE}."Clicks" ;;
+    type: number
+    sql: sum(${TABLE}."Clicks") ;;
   }
 
   measure: cost {
-    type: sum
-    sql: ${TABLE}."Cost" ;;
+    type: number
+    sql: sum(${TABLE}."Cost") ;;
   }
 
   dimension_group: date {
@@ -77,8 +77,8 @@ view: src_google_adwords_adperformance {
   }
 
   measure: impressions {
-    type: sum
-    sql: ${TABLE}."Impressions" ;;
+    type: number
+    sql: sum(${TABLE}."Impressions") ;;
   }
 
   measure: count {
