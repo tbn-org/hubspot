@@ -35,17 +35,18 @@ view: src_google_adwords_adperformance {
     sql: ${TABLE}."CampaignName" ;;
   }
 
-  dimension: clicks {
-    type: number
+  measure: clicks {
+    type: sum
     sql: ${TABLE}."Clicks" ;;
   }
 
-  dimension: cost {
-    type: number
+  measure: cost {
+    type: sum
     sql: ${TABLE}."Cost" ;;
   }
 
   dimension_group: date {
+    label: "Ad ran "
     type: time
     timeframes: [
       raw,
@@ -75,8 +76,8 @@ view: src_google_adwords_adperformance {
     sql: ${TABLE}."HeadlinePart2" ;;
   }
 
-  dimension: impressions {
-    type: number
+  measure: impressions {
+    type: sum
     sql: ${TABLE}."Impressions" ;;
   }
 
