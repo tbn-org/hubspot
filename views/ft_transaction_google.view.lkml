@@ -22,6 +22,7 @@ view: ft_transactions_google
     label: "Donation Amount Sum"
     type: number
     sql: sum(${TABLE}."AMOUNT_AMT") ;;
+    drill_fields: [accountnumber_id,documentnumber_id,transactiondate_dt_date,amount_amt]
   }
 
   dimension: documentnumber_id {
@@ -36,6 +37,7 @@ view: ft_transactions_google
     label: "Donation Count"
     type: count_distinct
     sql: ${TABLE}."DOCUMENTNUMBER_ID" ;;
+    drill_fields: [accountnumber_id,documentnumber_id,transactiondate_dt_date,amount_amt]
   }
 
   dimension: txncategory_cd {

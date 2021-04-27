@@ -47,7 +47,7 @@ view: src_google_adwords_adperformance {
   }
 
   dimension_group: date {
-    label: "Ad ran "
+    label: "Ad Ran "
     type: time
     timeframes: [
       raw,
@@ -80,10 +80,5 @@ view: src_google_adwords_adperformance {
   measure: impressions {
     type: number
     sql: sum(${TABLE}."Impressions") ;;
-  }
-
-  measure: count {
-    type: count
-    drill_fields: [id, ad_group_name, campaign_name]
   }
 }
