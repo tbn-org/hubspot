@@ -54,15 +54,24 @@ view: src_google_adwords_adperformance {
   }
 
   measure: cpc {
+    label: "CPC"
     type: number
     value_format: "#.000"
     sql: div0(${cost},${clicks}) ;;
   }
 
   measure: cpm {
+    label: "CPM"
     type: number
     value_format: "#.000"
     sql: div0(${cost},${impressions}) ;;
+  }
+
+  measure: roi {
+    label: "ROI"
+    type: number
+    value_format: "#.0%"
+    sql: div0(${ft_transactions_google.amount_amt_sum}, ${cost}) ;;
   }
 
   dimension_group: date {
