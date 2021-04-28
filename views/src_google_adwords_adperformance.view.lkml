@@ -53,6 +53,18 @@ view: src_google_adwords_adperformance {
     sql: ${TABLE}."Cost" ;;
   }
 
+  measure: cpc {
+    type: number
+    value_format: "#.000"
+    sql: div0(${cost},${clicks}) ;;
+  }
+
+  measure: cpm {
+    type: number
+    value_format: "#.000"
+    sql: div0(${cost},${impressions}) ;;
+  }
+
   dimension_group: date {
     label: "Ad Ran "
     type: time
