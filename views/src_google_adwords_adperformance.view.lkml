@@ -6,9 +6,15 @@ view: src_google_adwords_adperformance {
 
   dimension: id {
     label: "Ad ID"
-    primary_key: yes
     type: number
     sql: ${TABLE}."Id" ;;
+  }
+
+  dimension: prim_key {
+    type: string
+    primary_key: yes
+    sql: ${TABLE}."Id"||${date_date} ;;
+    hidden: yes
   }
 
   dimension: ad_group_id {
@@ -37,14 +43,14 @@ view: src_google_adwords_adperformance {
   }
 
   measure: clicks {
-    type: number
-    sql: sum(${TABLE}."Clicks") ;;
+    type: sum
+    sql: ${TABLE}."Clicks" ;;
   }
 
   measure: cost {
     value_format: "$#,##0.0"
-    type: number
-    sql: sum(${TABLE}."Cost") ;;
+    type: sum
+    sql: ${TABLE}."Cost" ;;
   }
 
   dimension_group: date {
@@ -79,7 +85,7 @@ view: src_google_adwords_adperformance {
   }
 
   measure: impressions {
-    type: number
-    sql: sum(${TABLE}."Impressions") ;;
+    type: sum
+    sql: ${TABLE}."Impressions" ;;
   }
 }
