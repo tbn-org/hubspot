@@ -122,13 +122,13 @@ view: ft_transactions_google
   measure: lifetimevalue {
     value_format: "$#,##0"
     label: "Life Time Donation Amount"
-    type: average
+    type: sum_distinct
     sql: ${transactions_lifetime_bv.transactionamount} ;;
     drill_fields: [accountnumber_id,documentnumber_id,transactiondate_dt_date,amount_amt]
   }
   measure: lifetimecount {
     label: "Life Time Donation Count"
-    type: average
+    type: sum_distinct
     sql: ${transactions_lifetime_bv.transactioncount} ;;
     drill_fields: [accountnumber_id,documentnumber_id,transactiondate_dt_date,amount_amt]
   }
