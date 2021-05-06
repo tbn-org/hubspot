@@ -69,6 +69,11 @@ view: src_contacts_id {
     sql: ${TABLE}."CellPhone" ;;
   }
 
+  dimension: gcl_id {
+    type: string
+    sql: ${TABLE}."GCLID" ;;
+  }
+
   measure: count {
     label: "Contact Count"
     type: count_distinct

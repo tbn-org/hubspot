@@ -13,7 +13,7 @@ explore: ft_campaign{
     fields: []
   }
   join: src_contacts_id {
-    view_label: "HS Contact (donation)"
+    view_label: "HS Contact"
     type: left_outer
     relationship: many_to_one
     sql_on: ${src_contacts_id.vid} = ${lt_emailcampaign_donation.vid};;
