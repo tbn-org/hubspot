@@ -9,7 +9,7 @@ explore:src_google_adwords_adperformance
   description: "Google Adwords"
 
   join: src_contacts_id {
-    view_label: "HS Contact (donation)"
+    view_label: "HS Contact"
     type: left_outer
     relationship: many_to_one
     sql_on: ${src_contacts_id.gcl_id} = ${src_google_adwords_clicks.gcl_id};;
@@ -37,7 +37,7 @@ explore:src_google_adwords_adperformance
   join: google_adword_donations_bv {
     type: left_outer
     relationship: many_to_many
-    sql_on:${src_google_adwords_adperformance.id}=${google_adword_donations_bv.kv_value} and ${google_adword_donations_bv.kv_name}='hsa_ad' and ${src_google_adwords_adperformance.date_date}=${google_adword_donations_bv.transaction_date};;
+    sql_on:${src_contacts_id.gcl_id}=${google_adword_donations_bv.kv_value} and ${google_adword_donations_bv.kv_name}='gclid';;
     fields: []
   }
   join: src_addtrandata {
