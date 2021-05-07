@@ -78,6 +78,6 @@ view: src_contacts_id {
     label: "Contact Count"
     type: count_distinct
     sql: ${TABLE}."VID" ;;
-    drill_fields: [vid,first_name,last_name,email]
+    drill_fields: [vid,first_name,last_name,email,gcl_id]
   }
 }

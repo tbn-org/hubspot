@@ -1,4 +1,4 @@
-view: src_google_adwords_adperformance {
+view: src_google_adwords_adperformance_contactlist {
   label: "Google Adwords Ad"
   sql_table_name: "HUBSPOT"."SRC_GOOGLE_ADWORDS_ADPERFORMANCE"
     ;;
@@ -65,13 +65,6 @@ view: src_google_adwords_adperformance {
     type: number
     value_format: "#.000"
     sql: div0(${cost},${impressions}) ;;
-  }
-
-  measure: roi {
-    label: "ROI"
-    type: number
-    value_format: "#.0%"
-    sql: div0(${ft_transactions_google.amount_amt_sum}, ${cost}) ;;
   }
 
   dimension_group: date {
