@@ -24,6 +24,7 @@ view: src_google_adwords_clicks {
 
   dimension: gcl_id {
     type: string
+    primary_key: yes
     sql: ${TABLE}."GclId" ;;
   }
 

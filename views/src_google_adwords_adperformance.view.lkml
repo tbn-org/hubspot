@@ -1,6 +1,6 @@
 view: src_google_adwords_adperformance {
   label: "Google Adwords Ad"
-  sql_table_name: "HUBSPOT"."SRC_GOOGLE_ADWORDS_ADPERFORMANCE"
+  sql_table_name: "HUBSPOT"."SRC_GOOGLE_ADWORDS_ADPERFORMANCE_BV"
     ;;
   drill_fields: [id]
 
@@ -90,6 +90,12 @@ view: src_google_adwords_adperformance {
     sql: ${TABLE}."Date" ;;
   }
 
+  dimension: addate {
+    label: "Ad Date"
+    type: string
+    sql: ${TABLE}."Date" ;;
+  }
+
   dimension: description {
     type: string
     sql: ${TABLE}."Description" ;;
@@ -110,9 +116,18 @@ view: src_google_adwords_adperformance {
     sql: ${TABLE}."Impressions" ;;
   }
 
-  measure: gclidcount {
-    label: "Gclid Count"
-    type: count_distinct
-    sql: ${src_google_adwords_clicks.gcl_id} ;;
+  measure: donation_amount {
+    type: sum
+    sql: ${TABLE}."DONATION_AMOUNT" ;;
+  }
+
+  measure: donation_count {
+    type: sum
+    sql: ${TABLE}."DONATION_COUNT" ;;
+  }
+
+  measure: contactcount {
+    type: sum
+    sql: ${TABLE}."CONTACTCOUNT" ;;
   }
 }
