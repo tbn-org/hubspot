@@ -187,35 +187,35 @@ view: src_google_adwords_adperformance {
     value_format: "$#,##0"
     label: "Donation Amount"
     type: number
-    sql: ft_transactions_google.amount_amt} ;;
+    sql: ${ft_transactions_google.amount_amt} ;;
     hidden: yes
   }
 
   dimension: documentnumber_id {
     label: "Document Number"
     type: number
-    sql: ft_transactions_google.documentnumber_id} ;;
+    sql: ${ft_transactions_google.documentnumber_id} ;;
     hidden: yes
   }
 
   dimension: txncategory_cd {
     label: "TXN Category"
     type: string
-    sql: ft_transactions_google.txncategory_cd} ;;
+    sql: ${ft_transactions_google.txncategory_cd} ;;
     hidden: yes
   }
 
   dimension: sourcecode_cd {
     label: "Souce Code"
     type: string
-    sql: ft_transactions_google.sourcecode_cd} ;;
+    sql: ${ft_transactions_google.sourcecode_cd} ;;
     hidden: yes
   }
 
   dimension: transactiondate_dt {
     label: "Donation Date"
     type: date
-    sql: ft_transactions_google.transactiondate_dt} ;;
+    sql: ${ft_transactions_google.transactiondate_dt_raw} ;;
     hidden: yes
   }
 }
