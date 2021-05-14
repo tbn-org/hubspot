@@ -8,16 +8,16 @@ explore:src_google_adwords_adperformance
   label: "Google Adwords"
   description: "Google Adwords"
 
-  join: src_contacts_id {
+  join: src_contacts_id_google {
     view_label: "HS Contact"
     type: left_outer
-    relationship: many_to_one
-    sql_on: ${src_contacts_id.gcl_id} = ${src_google_adwords_clicks.gcl_id};;
+    relationship: one_to_one
+    sql_on: ${src_contacts_id_google.gcl_id} = ${src_google_adwords_clicks.gcl_id};;
   }
   join: src_google_adwords_clicks {
     view_label: "Adwords Clicks"
     type: left_outer
-    relationship: one_to_one
+    relationship: one_to_many
     sql_on: ${src_google_adwords_adperformance.id} = ${src_google_adwords_clicks.creative_id} and ${src_google_adwords_adperformance.date_raw}=${src_google_adwords_clicks.date_raw};;
     fields: []
   }
@@ -25,7 +25,7 @@ explore:src_google_adwords_adperformance
     view_label: "Contact List"
     type: left_outer
     relationship: many_to_many
-    sql_on: ${src_contacts_id.vid} = ${src_contactlistmembers.vid};;
+    sql_on: ${src_contacts_id_google.vid} = ${src_contactlistmembers.vid};;
     fields: []
   }
   join: src_contactlists {
@@ -37,7 +37,7 @@ explore:src_google_adwords_adperformance
   }
   join: google_adword_donations_bv {
     type: left_outer
-    relationship: many_to_many
+    relationship: one_to_many
     sql_on:${src_google_adwords_adperformance.id}=${google_adword_donations_bv.kv_value} and ${google_adword_donations_bv.kv_name}='hsa_ad' and ${src_google_adwords_adperformance.date_date}=${google_adword_donations_bv.transaction_date};;
     fields: []
   }
