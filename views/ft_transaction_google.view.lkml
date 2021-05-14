@@ -17,27 +17,12 @@ view: ft_transactions_google
     sql: ${TABLE}."AMOUNT_AMT" ;;
   }
 
-  measure: amount_amt_sum {
-    value_format: "$#,##0"
-    label: "Donation Amount Sum"
-    type: number
-    sql: sum(${TABLE}."AMOUNT_AMT") ;;
-    drill_fields: [accountnumber_id,documentnumber_id,transactiondate_dt_date,amount_amt]
-  }
 
   dimension: documentnumber_id {
     label: "Document Number"
     primary_key: yes
     type: number
     sql: ${TABLE}."DOCUMENTNUMBER_ID" ;;
-  }
-
-  measure: donation_count {
-    value_format: "#,##0"
-    label: "Donation Count"
-    type: count_distinct
-    sql: ${TABLE}."DOCUMENTNUMBER_ID" ;;
-    drill_fields: [accountnumber_id,documentnumber_id,transactiondate_dt_date,amount_amt]
   }
 
   dimension: txncategory_cd {

@@ -71,7 +71,7 @@ view: src_google_adwords_adperformance {
     label: "ROI"
     type: number
     value_format: "#.0%"
-    sql: div0(${ft_transactions_google.amount_amt_sum}, ${cost}) ;;
+    sql: div0(${donation_amount}, ${cost}) ;;
   }
 
   dimension_group: date {
