@@ -1,6 +1,6 @@
 view: src_google_adwords_adperformance {
   label: "Google Adwords Ad"
-  sql_table_name: "HUBSPOT"."SRC_GOOGLE_ADWORDS_ADPERFORMANCE_BV"
+  sql_table_name: "HUBSPOT"."GOOGLE_ADWORDS_ADPERFORMANCE_BV"
     ;;
   drill_fields: [id]
 
