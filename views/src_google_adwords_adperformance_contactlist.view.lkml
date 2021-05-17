@@ -102,10 +102,4 @@ view: src_google_adwords_adperformance_contactlist {
     type: sum
     sql: ${TABLE}."Impressions" ;;
   }
-
-  measure: gclidcount {
-    label: "Gclid Count"
-    type: count_distinct
-    sql: ${src_google_adwords_clicks.gcl_id} ;;
-  }
 }
