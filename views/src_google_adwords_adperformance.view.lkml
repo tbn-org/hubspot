@@ -137,6 +137,14 @@ view: src_google_adwords_adperformance {
     drill_fields: [vid,first_name,last_name,email,gcl_id]
   }
 
+  measure: clickconversion {
+    label: "Conversion %"
+    type: number
+    value_format: "#.0%"
+    sql: ${contactcount}/${clicks} ;;
+    drill_fields: [vid,first_name,last_name,email,gcl_id]
+  }
+
   dimension: email {
     type: string
     sql: ${src_contacts_id_google.email} ;;
