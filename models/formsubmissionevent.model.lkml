@@ -47,4 +47,45 @@ explore:src_contacts_id {
     relationship: one_to_one
     sql_on: ${src_google_adwords_adperformance_contactlist.id} = ${src_google_adwords_clicks.creative_id} and ${src_google_adwords_adperformance_contactlist.date_raw}=${src_google_adwords_clicks.date_raw};;
   }
+
+  join: src_accountemails_hubspot {
+    type: left_outer
+    relationship: many_to_many
+    sql_on: ${src_accountemails_hubspot.email_address} = ${src_contacts_id.email};;
+    fields: []
+  }
+
+  join: ft_transactions_all {
+    type: inner
+    relationship: many_to_one
+    sql_on:${src_accountemails_hubspot.account_number}=${ft_transactions_all.accountnumber_id};;
+  }
+
+  join: src_addtrandata {
+    type: left_outer
+    relationship: one_to_one
+    sql_on:${src_addtrandata.document_number}=${ft_transactions_all.documentnumber_id};;
+    fields: []
+  }
+
+  join: transactions_lifetime_bv {
+    type: inner
+    relationship: many_to_many
+    sql_on:${ft_transactions_all.accountnumber_id}=${transactions_lifetime_bv.accountnumber_id};;
+    fields: []
+  }
+
+  join: donor_first_transactiondate {
+    from: donor_first_last_transactiondate_bv
+    type: left_outer
+    relationship: many_to_many
+    sql_on: ${donor_first_transactiondate.accountnumber_id}=${ft_transactions_all.accountnumber_id};;
+    fields: []
+  }
+  join: ft_transactions_pre_after_bv {
+    type: left_outer
+    relationship: one_to_many
+    sql_on: ${ft_transactions_all.documentnumber_id} = ${ft_transactions_pre_after_bv.documentnumber_id};;
+    fields: []
+  }
 }
