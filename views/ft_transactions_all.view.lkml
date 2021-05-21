@@ -11,7 +11,7 @@ view: ft_transactions_all
   }
 
   dimension: amount_amt {
-    value_format: "$#,##0"
+    value_format: "$#,##0.00"
     label: "Donation Amount"
     type: number
     sql: ${TABLE}."AMOUNT_AMT" ;;
