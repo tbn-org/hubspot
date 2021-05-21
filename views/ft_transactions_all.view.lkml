@@ -18,7 +18,7 @@ view: ft_transactions_all
   }
 
   measure: amount_amt_sum {
-    value_format: "$#,##0"
+    value_format: "$#,##0.00"
     label: "Donation Amount Sum"
     type: number
     sql: sum(${TABLE}."AMOUNT_AMT") ;;
