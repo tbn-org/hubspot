@@ -43,6 +43,7 @@ view: src_oracle_contract_invoice {
   }
 
   dimension: transaction_number {
+    primary_key: yes
     type: string
     sql: ${TABLE}."TRANSACTION_NUMBER" ;;
   }
