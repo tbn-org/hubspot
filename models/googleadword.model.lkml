@@ -50,7 +50,7 @@ explore:src_google_adwords_adperformance
   join: ft_transactions_google {
     type: left_outer
     relationship: one_to_one
-    sql_on:${src_addtrandata.document_number}=${ft_transactions_google.documentnumber_id};;
+    sql_on:${src_addtrandata.document_number}=${ft_transactions_google.documentnumber_id} and ${ft_transactions_google.sourcecode_cd}!='T00REC';;
   }
   join: transactions_lifetime_bv {
     type: inner
