@@ -19,7 +19,7 @@ explore:src_oracle_contract_invoice
     view_label: "HS Deals"
     type: left_outer
     relationship: many_to_one
-    sql_on: ${src_deals.associated_vids} = ${src_contacts_id.vid};;
+    sql_on: ${src_deals.associated_vids} = to_char(${src_contacts_id.vid});;
   }
 
   join: src_contactlistmembers {
