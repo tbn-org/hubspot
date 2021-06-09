@@ -4,7 +4,7 @@ include: "/views/*.view"
 
 explore: src_facebook_ad{
   persist_for: "8 hour"
-  label: "Facebook Campaign"
+  label: "Facebook Campaigns"
   description: "Ad"
   join: src_contactformsubmission {
     view_label: "Facebook Form Submission"

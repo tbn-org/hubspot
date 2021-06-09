@@ -5,7 +5,7 @@ include: "/views/*.view"
 explore:src_oracle_contract_invoice
 {
   persist_for: "8 hour"
-  label: "Oracle Contract"
+  label: "Oracle Contract Invoices"
   description: "Oracle Contract Invoices"
 
     join: src_contacts_id {
