@@ -37,4 +37,30 @@ explore:src_oracle_contract_invoice
     sql_on: ${src_contactlists.list_id} = ${src_contactlistmembers.list_id};;
     fields: []
   }
+  join: src_contactformsubmission {
+    view_label: "Facebook Form Submission"
+    type: left_outer
+    relationship: one_to_many
+    sql_on: ${src_contacts_id.vid} = ${src_contactformsubmission.vid};;
+    fields: []
+  }
+  join:src_facebook_ad{
+  view_label: "Facebook Campaigns"
+    type: left_outer
+    relationship: one_to_many
+    sql_on:${src_facebook_ad.id} = ${src_contactformsubmission.fbadid};;
+  }
+  join: src_facebook_campaign {
+    view_label: "Campaign"
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${src_facebook_ad.campaign_id} = ${src_facebook_campaign.id};;
+    fields: []
+  }
+  join: src_facebook_adinsight {
+    type: left_outer
+    relationship: one_to_one
+    sql_on: ${src_facebook_ad.id} = ${src_facebook_adinsight.ad_id};;
+    fields: []
+  }
 }
