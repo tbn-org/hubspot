@@ -9,7 +9,7 @@ explore:src_oracle_contract_invoice
   description: "Oracle Contract Invoices"
 
     join: src_contacts_id {
-      view_label: "HS Contact (donation)"
+      view_label: "HS Contact"
       type: left_outer
       relationship: one_to_many
       sql_on: ${src_contacts_id.email} = ${src_oracle_contract_invoice.customer_email};;

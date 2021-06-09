@@ -1,4 +1,5 @@
 view: src_oracle_contract_invoice {
+  label: "Oracle Contract Invoices"
   sql_table_name: "HUBSPOT"."SRC_ORACLE_CONTRACT_INVOICE"
     ;;
 
