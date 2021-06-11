@@ -210,7 +210,7 @@ view: src_deals {
   }
 
   dimension: deal_stage {
-    label: "Stage"
+    label: "Deal Stage"
     type: string
     sql: ${src_dealstage.stage_name} ;;
   }
