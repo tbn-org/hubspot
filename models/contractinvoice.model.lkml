@@ -27,6 +27,7 @@ explore:src_oracle_contract_invoice
     type: inner
     relationship: many_to_one
     sql_on: ${src_stage.stage_id}=${src_deals.deal_stageid};;
+    fields: []
   }
 
   join: src_contactlistmembers {
