@@ -209,8 +209,15 @@ view: src_deals {
     sql: ${TABLE}."Deal Source Type" ;;
   }
 
+  dimension: deal_stageid {
+    label: "Stage ID"
+    type: string
+    sql: ${TABLE}."Deal Stage" ;;
+    hidden: yes
+  }
+
   dimension: deal_stage {
-    label: "Deal Stage"
+    label: "Stage Name"
     type: string
     sql: ${src_stage.stage_name} ;;
   }
