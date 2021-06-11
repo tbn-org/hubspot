@@ -1,4 +1,4 @@
-view: src_dealstage {
+view: src_stage {
   sql_table_name: "HUBSPOT"."SRC_DEALSTAGE"
     ;;
 
