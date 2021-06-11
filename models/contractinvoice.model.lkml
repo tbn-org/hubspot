@@ -26,8 +26,7 @@ explore:src_oracle_contract_invoice
     view_label: "HS Deal Stage"
     type: left_outer
     relationship: many_to_one
-    sql_on: ${src_deals.deal_stage} = ${src_dealstage.stage_id};;
-    fields: []
+    sql_on: ${src_dealstage.stage_id}=${src_deals.deal_stage};;
   }
 
   join: src_contactlistmembers {
