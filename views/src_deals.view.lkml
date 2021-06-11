@@ -210,8 +210,9 @@ view: src_deals {
   }
 
   dimension: deal_stage {
+    label: "Stage"
     type: string
-    sql: ${TABLE}."Deal Stage" ;;
+    sql: ${src_dealstage.stage_name} ;;
   }
 
   dimension: deal_stage_probability {
