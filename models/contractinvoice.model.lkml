@@ -22,6 +22,13 @@ explore:src_oracle_contract_invoice
     sql_on: ${src_deals.associated_vids} = to_char(${src_contacts_id.vid});;
   }
 
+  join: src_dealstage {
+    view_label: "HS Deal Stage"
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${src_deals.deal_stage} = ${src_dealstage.stage_id});;
+  }
+
   join: src_contactlistmembers {
     view_label: "Contact List Member"
     type: left_outer
