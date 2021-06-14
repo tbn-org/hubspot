@@ -60,6 +60,12 @@ view: src_contacts_id_fb {
     sql: ${src_contactformsubmission.submissiontime} ;;
   }
 
+  dimension: fbformsubmission {
+    label: "FB Submission Form"
+    type: string
+    sql: ${src_contactformsubmission.formname} ;;
+  }
+
   dimension: fromFB {
     label: "Likely Originated from FB"
     type: yesno
