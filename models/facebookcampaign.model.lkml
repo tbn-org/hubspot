@@ -32,6 +32,13 @@ explore: src_facebook_ad{
     relationship: many_to_one
     sql_on: ${src_contacts_id_fb.vid} = ${src_contactformsubmission.vid};;
   }
+  join:src_oracle_contract_invoice {
+    view_label: "Oracle Contract Invoices"
+    type: left_outer
+    relationship: one_to_many
+    sql_on: ${src_contacts_id_fb.email} = ${src_oracle_contract_invoice.customer_email};;
+  }
+
   join: src_accountemails_hubspot {
     type: left_outer
     relationship: many_to_many
