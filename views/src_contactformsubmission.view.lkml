@@ -21,12 +21,6 @@ view: src_contactformsubmission {
     sql: ${TABLE}."FORMID" ;;
   }
 
-  dimension: formname {
-    label: "Form Name (Title)"
-    type: string
-    sql: ${src_forms.name} ;;
-  }
-
   dimension: formtype {
     label: "Form Type"
     type: string

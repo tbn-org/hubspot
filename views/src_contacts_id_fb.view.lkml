@@ -63,7 +63,7 @@ view: src_contacts_id_fb {
   dimension: fbformsubmission {
     label: "FB Submission Form"
     type: string
-    sql: ${src_contactformsubmission.formname} ;;
+    sql: ${src_contactformsubmission.pagetitle} ;;
   }
 
   dimension: fromFB {

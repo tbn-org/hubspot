@@ -11,7 +11,6 @@ explore: src_facebook_ad{
     type: left_outer
     relationship: one_to_many
     sql_on: ${src_facebook_ad.id} = ${src_contactformsubmission.fbadid};;
-    fields: []
   }
   join: src_facebook_adinsight {
     type: left_outer
