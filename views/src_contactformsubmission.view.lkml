@@ -39,6 +39,12 @@ view: src_contactformsubmission {
     sql: ${TABLE}."PAGETITLE" ;;
   }
 
+  dimension: formtitle {
+    label: "Form Title"
+    type: string
+    sql: ${TABLE}."TITLE" ;;
+  }
+
   dimension: pageurl {
     label: "Page URL"
     type: string
