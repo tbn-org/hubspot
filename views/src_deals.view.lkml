@@ -599,8 +599,12 @@ view: src_deals {
     sql: ${TABLE}."User IDs of all owners" ;;
   }
 
-  measure: count {
-    type: count
-    drill_fields: [deal_name]
+    measure: count {
+      type: count
+  }
+
+  measure: dealamount {
+    type: sum
+    sql: ${TABLE}."Amount" ;;
   }
 }
