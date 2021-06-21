@@ -4,13 +4,14 @@ view: src_deals {
 
   measure: count {
     type: count
-    drill_fields: [src_facebook_campaign.id,src_facebook_campaign.name,deal_name,deal_email,deal_stage,amount]
+    drill_fields: [deal_name,associated_vids,create.raw,deal_stage,amount,last_activity.raw]
   }
 
   measure: dealamount {
     label: "Deal Amount"
     type: sum
     sql: ${TABLE}."Amount" ;;
+    drill_fields: [deal_name,associated_vids,create.raw,deal_stage,amount,last_activity.raw]
   }
 
   dimension: abandoned_cart_url {
@@ -64,6 +65,7 @@ view: src_deals {
   }
 
   dimension: associated_vids {
+    label: "HS Contact ID"
     type: string
     sql: ${TABLE}."AssociatedVids" ;;
   }
