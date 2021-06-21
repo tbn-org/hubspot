@@ -4,6 +4,7 @@ view: src_deals {
 
   measure: count {
     type: count
+    drill_fields: [src_facebook_campaign.id,src_facebook_campaign.name,deal_name,deal_email,deal_stage,amount]
   }
 
   measure: dealamount {
@@ -231,6 +232,7 @@ view: src_deals {
     label: "Deal Stage"
     type: string
     sql: ${src_stage.stage_name} ;;
+
   }
 
   dimension: deal_stage_probability {
