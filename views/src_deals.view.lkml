@@ -2,6 +2,16 @@ view: src_deals {
   sql_table_name: "HUBSPOT"."SRC_DEALS"
     ;;
 
+  measure: count {
+    type: count
+  }
+
+  measure: dealamount {
+    label: "Deal Amount"
+    type: sum
+    sql: ${TABLE}."Amount" ;;
+  }
+
   dimension: abandoned_cart_url {
     type: string
     sql: ${TABLE}."Abandoned Cart Url" ;;
@@ -177,6 +187,7 @@ view: src_deals {
   dimension: deal_id {
     type: number
     sql: ${TABLE}."DealId" ;;
+    primary_key: yes
   }
 
   dimension: deal_mobile_phone_number {
@@ -597,14 +608,5 @@ view: src_deals {
   dimension: user_ids_of_all_owners {
     type: string
     sql: ${TABLE}."User IDs of all owners" ;;
-  }
-
-    measure: count {
-      type: count
-  }
-
-  measure: dealamount {
-    type: sum
-    sql: ${TABLE}."Amount" ;;
   }
 }
