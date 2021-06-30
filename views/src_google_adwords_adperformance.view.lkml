@@ -42,6 +42,12 @@ view: src_google_adwords_adperformance {
     sql: ${TABLE}."CampaignName" ;;
   }
 
+  dimension: account_name {
+    type: string
+    label: "Account"
+    sql: ${TABLE}."AccountDescriptiveName" ;;
+  }
+
   measure: clicks {
     type: sum
     sql: ${TABLE}."Clicks" ;;
