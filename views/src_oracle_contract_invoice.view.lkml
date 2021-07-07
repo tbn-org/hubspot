@@ -43,6 +43,12 @@ view: src_oracle_contract_invoice {
     sql: ${TABLE}."TRANSACTION_DATE" ;;
   }
 
+  measure: days_to_close {
+    label: "Days to Close"
+    type: sum
+    sql: datediff(day,${src_contactformsubmission.submissiontime},${TABLE}."TRANSACTION_DATE") ;;
+  }
+
   dimension: transaction_number {
     primary_key: yes
     type: string
