@@ -10,7 +10,7 @@ explore: src_facebook_ad{
     view_label: "Facebook Form Submission"
     type: left_outer
     relationship: one_to_many
-    sql_on: ${src_facebook_ad.id} = ${src_contactformsubmission.fbadid};;
+    sql_on: ${src_facebook_ad.id} = ${src_contactformsubmission.fbadid} or (${src_contactformsubmission.fbadid} is null and ${src_facebook_ad.campaign_id} = ${src_contactformsubmission.fbcamapignid});;
     fields: []
   }
   join: src_facebook_adinsight {
