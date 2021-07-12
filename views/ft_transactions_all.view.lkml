@@ -41,9 +41,8 @@ view: ft_transactions_all
   measure: donation_avg {
     value_format: "$#,##0.00"
     label: "Avg. Gift"
-    type: average_distinct
-    sql_distinct_key: ${accountnumber_id} ;;
-    sql: ${TABLE}."AMOUNT_AMT" ;;
+    type: number
+    sql: sum(${TABLE}."AMOUNT_AMT")/count({accountnumber_id}) ;;
   }
 
   dimension: txncategory_cd {
