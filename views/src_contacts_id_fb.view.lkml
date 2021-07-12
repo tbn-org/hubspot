@@ -90,7 +90,7 @@ view: src_contacts_id_fb {
   measure: days_to_donation {
     label: "Days to First Donation"
     type: number
-    sql: sum(datediff(day,${src_contactformsubmission.submissiontime},${donor_first_transactiondate.firsttransactiondate_raw})) ;;
+    sql: avg(datediff(day,${src_contactformsubmission.submissiontime},${donor_first_transactiondate.firsttransactiondate_raw})) ;;
   }
 
   measure: donation_frequency {
