@@ -48,7 +48,7 @@ view: ft_transactions_all
     value_format: "$#,##0.00"
     label: "Avg. Gift"
     type: number
-    sql: sum(${TABLE}."AMOUNT_AMT")/count(${TABLE}."ACCOUNTNUMBER_ID") ;;
+    sql: sum(${TABLE}."AMOUNT_AMT")/count(distinct ${TABLE}."ACCOUNTNUMBER_ID") ;;
   }
 
   dimension: txncategory_cd {
