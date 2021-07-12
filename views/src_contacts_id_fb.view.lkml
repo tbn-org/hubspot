@@ -44,6 +44,7 @@ view: src_contacts_id_fb {
   dimension: vid {
     label: "Contact ID"
     type: number
+    primary_key: yes
     value_format_name: id
     sql: ${TABLE}."VID" ;;
   }
