@@ -99,7 +99,7 @@ view: src_contacts_id_fb {
     label: "Donation Frequency (days)"
     value_format: "#,##0"
     type: number
-    sql: avg(datediff(day,${donor_first_transactiondate.firsttransactiondate_raw},CURRENT_DATE())/${ft_transactions_all.lifetimecount}) ;;
+    sql: sum(datediff(day,${donor_first_transactiondate.firsttransactiondate_raw},CURRENT_DATE()))/sum({ft_transactions_all.lifetimecount}) ;;
   }
 
   measure: count {
