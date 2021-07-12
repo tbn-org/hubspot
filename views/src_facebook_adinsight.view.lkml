@@ -291,7 +291,10 @@ view: src_facebook_adinsight {
     type: number
     sql: ${TABLE}."UniqueLinkClicksCounter" ;;
   }
-
+  measure: form_conversion {
+    type: number
+    sql:  ${src_contacts_id_fb.count}/${TABLE}."Clicks";;
+  }
   measure: count {
     type: count
     drill_fields: [ad_set_name, ad_name, campaign_name, ad_account_name]

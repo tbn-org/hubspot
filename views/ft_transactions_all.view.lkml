@@ -38,6 +38,14 @@ view: ft_transactions_all
     sql: ${TABLE}."DOCUMENTNUMBER_ID" ;;
   }
 
+  measure: donation_avg {
+    value_format: "$#,##0.00"
+    label: "Avg. Gift"
+    type: average_distinct
+    sql_distinct_key: ${accountnumber_id} ;;
+    sql: ${TABLE}."AMOUNT_AMT" ;;
+  }
+
   dimension: txncategory_cd {
     label: "TXN Category"
     type: string
