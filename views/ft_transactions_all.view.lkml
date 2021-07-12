@@ -38,6 +38,12 @@ view: ft_transactions_all
     sql: ${TABLE}."DOCUMENTNUMBER_ID" ;;
   }
 
+  measure: donor_count {
+    value_format: "#,##0"
+    label: "Donor Count"
+    type: count_distinct
+    sql: ${TABLE}."ACCOUNTNUMBER_ID" ;;
+  }
   measure: donation_avg {
     value_format: "$#,##0.00"
     label: "Avg. Gift"
