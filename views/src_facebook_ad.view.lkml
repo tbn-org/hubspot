@@ -282,7 +282,11 @@ view: src_facebook_ad {
     type: sum
     sql: ${src_facebook_adinsight.unique_inline_link_clicks} ;;
   }
-
+  measure: form_conversion {
+    label: "Click-Submission Conversion"
+    type: number
+    sql:  ${src_facebook_adinsight.form_conversion};;
+  }
   measure: count {
     label: "Ad Count"
     type: count
