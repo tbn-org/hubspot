@@ -14,6 +14,7 @@ view: src_facebook_adinsight {
 
   dimension: ad_id {
     type: string
+    primary_key: yes
     sql: ${TABLE}."AdId" ;;
   }
 
