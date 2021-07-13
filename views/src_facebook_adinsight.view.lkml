@@ -294,6 +294,7 @@ view: src_facebook_adinsight {
   }
   measure: form_conversion {
     label: "Click-Form Submission Conversion"
+    value_format: "#.0%"
     type: number
     sql:  div0(${src_contacts_id_fb.count},${sum_clicks});;
   }
