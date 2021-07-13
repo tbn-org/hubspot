@@ -285,6 +285,7 @@ view: src_facebook_ad {
   measure: form_conversion {
     label: "Click-Submission Conversion"
     type: number
+    value_format: "#.0%"
     sql:  ${src_facebook_adinsight.form_conversion};;
   }
   measure: count {
