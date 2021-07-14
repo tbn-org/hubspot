@@ -292,7 +292,7 @@ view: src_facebook_ad {
     label: "ROI"
     type: number
     value_format: "#.0%"
-    sql:  ${src_oracle_contract_invoice.invoice_amount}/${spend};;
+    sql:  div0(${src_oracle_contract_invoice.invoice_amount},${spend});;
   }
   measure: count {
     label: "Ad Count"
