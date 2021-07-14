@@ -206,9 +206,11 @@ view: src_deals {
   dimension: deal_owner {
     type: string
     sql: ${TABLE}."Deal owner" ;;
+    hidden: yes
   }
 
   dimension: deal_owner_name {
+    label: "Deal Owner"
     type: string
     sql: CONCAT(${src_owners.first_name},' ',${src_owners.last_name}) ;;
   }
