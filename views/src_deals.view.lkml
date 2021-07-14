@@ -208,6 +208,11 @@ view: src_deals {
     sql: ${TABLE}."Deal owner" ;;
   }
 
+  dimension: deal_owner_name {
+    type: string
+    sql: CONCAT(${src_owners.first_name},' ',${src_owners.last_name}) ;;
+  }
+
   dimension: deal_phone_number {
     type: string
     sql: ${TABLE}."Deal Phone Number" ;;

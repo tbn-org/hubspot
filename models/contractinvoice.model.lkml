@@ -21,6 +21,12 @@ explore:src_oracle_contract_invoice
     relationship: many_to_one
     sql_on: ${src_deals.associated_vids} = to_char(${src_contacts_id.vid});;
 }
+  join: src_owners {
+    view_label: "HS Owners"
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${src_deals.deal_owner} = to_char(${src_owners.owner_id});;
+  }
   join: src_stage {
     view_label: "HS Deal Stage"
     type: left_outer
