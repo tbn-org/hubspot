@@ -288,6 +288,12 @@ view: src_facebook_ad {
     value_format: "#.0%"
     sql:  ${src_facebook_adinsight.form_conversion};;
   }
+  measure: ROI {
+    label: "ROI"
+    type: number
+    value_format: "#.0%"
+    sql:  ${src_oracle_contract_invoice.invoice_amount}/${spend};;
+  }
   measure: count {
     label: "Ad Count"
     type: count
