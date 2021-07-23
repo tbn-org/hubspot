@@ -43,7 +43,7 @@ explore: src_facebook_ad{
   join: src_deals {
     view_label: "HS Deals"
     type: left_outer
-    relationship: many_to_one
+    relationship: one_to_many
     sql_on: ${src_deals.associated_vids} = to_char(${src_contacts_id_fb.vid});;
   }
   join: src_owners {
