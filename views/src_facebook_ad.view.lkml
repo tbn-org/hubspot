@@ -75,7 +75,7 @@ view: src_facebook_ad {
 
   dimension_group: date_start {
     type: time
-    label: "Start"
+    label: "Ran"
     timeframes: [
       raw,
       date,
@@ -102,6 +102,7 @@ view: src_facebook_ad {
     ]
     convert_tz: no
     datatype: date
+    hidden: yes
     sql: ${src_facebook_adinsight.date_end_raw}  ;;
   }
 
@@ -295,10 +296,16 @@ view: src_facebook_ad {
     sql:  ${src_facebook_adinsight.form_conversion};;
   }
   measure: ROI {
-    label: "ROI"
+    label: "Sales ROI"
     type: number
     value_format: "#.0%"
     sql:  div0(${src_oracle_contract_invoice.invoice_amount},${spend});;
+  }
+  measure: DonationROI {
+    label: "Donation ROI"
+    type: number
+    value_format: "#.0%"
+    sql:  div0(${ft_transactions_all.amount_amt_sum},${spend});;
   }
   measure: count {
     label: "Ad Count"

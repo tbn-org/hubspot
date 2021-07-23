@@ -55,7 +55,19 @@ explore:src_oracle_contract_invoice
     sql_on: ${src_contacts_id.vid} = ${src_contactformsubmission.vid};;
     fields: []
     }
+  join: src_accountemails_hubspot {
+    type: left_outer
+    relationship: many_to_many
+    sql_on: ${src_accountemails_hubspot.email_address} = ${src_contacts_id.email};;
+    fields: []
+  }
 
+  join: ft_transactions_all {
+    type: left_outer
+    relationship: many_to_one
+    sql_on:${src_accountemails_hubspot.account_number}=${ft_transactions_all.accountnumber_id};;
+    fields: []
+  }
   join:src_facebook_ad{
   view_label: "Facebook Campaigns"
     type: left_outer
