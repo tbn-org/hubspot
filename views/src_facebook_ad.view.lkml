@@ -198,6 +198,12 @@ view: src_facebook_ad {
     value_format: "#.000"
     sql: div0(${spend},${reach})*1000 ;;
   }
+  measure: cpl {
+    label: "cpl"
+    type: number
+    value_format: "#.00"
+    sql:  div0(${spend},${src_contacts_id_fb.count});;
+  }
 
   dimension: ctr {
     type: number
@@ -290,7 +296,7 @@ view: src_facebook_ad {
     sql: ${src_facebook_adinsight.unique_inline_link_clicks} ;;
   }
   measure: form_conversion {
-    label: "Click-Submission Conversion"
+    label: "Conversion Rate Goal 1"
     type: number
     value_format: "#.0%"
     sql:  ${src_facebook_adinsight.form_conversion};;

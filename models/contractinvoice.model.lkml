@@ -14,7 +14,13 @@ explore:src_oracle_contract_invoice
       relationship: one_to_many
       sql_on: ${src_contacts_id.email} = ${src_oracle_contract_invoice.customer_email};;
     }
-
+  join: src_contacts_id_fb {
+    view_label: "Hubspot Contact"
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${src_contacts_id_fb.vid} = ${src_contactformsubmission.vid};;
+    fields: []
+  }
   join: src_deals {
     view_label: "HS Deals"
     type: left_outer
