@@ -64,6 +64,12 @@ view: src_contactformsubmission {
     sql: ${TABLE}."SUBMISSIONTIME" ;;
   }
 
+  dimension: submissiondate {
+    label: "Submission Date"
+    type: date
+    sql: DATE_TRUNC('DAY',${TABLE}."SUBMISSIONTIME") ;;
+  }
+
   dimension: vid {
     label: "Contact ID"
     type: number
