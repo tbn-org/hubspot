@@ -4,9 +4,15 @@ view: src_facebook_ad {
     ;;
   drill_fields: [id]
 
+  dimension: compound_primary_key {
+    primary_key: yes
+    hidden: yes
+    type: string
+    sql: CONCAT(${TABLE}."ID" , ' ', ${src_facebook_adinsight.date_start_raw}) ;;
+  }
+
   dimension: id {
     label: "Ad ID"
-    primary_key: yes
     type: string
     sql: ${TABLE}."ID" ;;
   }
