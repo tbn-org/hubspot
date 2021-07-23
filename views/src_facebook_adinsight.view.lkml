@@ -1,5 +1,5 @@
 view: src_facebook_adinsight {
-  sql_table_name: "HUBSPOT"."SRC_FACEBOOK_ADINSIGHT"
+  sql_table_name: "HUBSPOT"."SRC_FACEBOOK_ADINSIGHT_DAILY"
     ;;
 
   dimension: ad_account_id {
