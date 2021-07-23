@@ -17,7 +17,7 @@ explore: src_facebook_ad{
   }
   join: src_facebook_adinsight {
     type: left_outer
-    relationship: one_to_one
+    relationship: one_to_many
     sql_on: ${src_facebook_ad.id} = ${src_facebook_adinsight.ad_id};;
     fields: []
   }
