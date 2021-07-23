@@ -69,7 +69,7 @@ explore: src_facebook_ad{
   }
 
   join: ft_transactions_all {
-    type: inner
+    type: left_outer
     relationship: many_to_one
     sql_on:${src_accountemails_hubspot.account_number}=${ft_transactions_all.accountnumber_id};;
   }
