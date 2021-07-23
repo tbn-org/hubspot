@@ -12,9 +12,15 @@ view: src_facebook_adinsight {
     sql: ${TABLE}."AdAccountName" ;;
   }
 
+  dimension: compound_primary_key {
+    primary_key: yes
+    hidden: yes
+    type: string
+    sql: CONCAT(${TABLE}."AdId" , ' ', ${TABLE}."DateStart") ;;
+  }
+
   dimension: ad_id {
     type: string
-    primary_key: yes
     sql: ${TABLE}."AdId" ;;
   }
 
