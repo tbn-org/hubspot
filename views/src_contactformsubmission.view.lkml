@@ -11,6 +11,7 @@ view: src_contactformsubmission {
 
   dimension: conversionid {
     type: string
+    primary_key: yes
     sql: ${TABLE}."CONVERSIONID" ;;
     hidden: yes
   }
