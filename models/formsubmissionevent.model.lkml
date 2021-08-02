@@ -88,10 +88,10 @@ explore:src_contacts_id {
     sql_on: ${ft_transactions_all.documentnumber_id} = ${ft_transactions_pre_after_bv.documentnumber_id};;
     fields: []
   }
-  join: src_contacts_first {
-    view_label: "Forms"
+  join: lt_contact_firsttouch {
+    view_label: "First Touch"
     type: inner
     relationship: one_to_one
-    sql_on: ${src_contacts_id.vid} = ${src_contacts_first.vid};;
+    sql_on: ${src_contacts_id.vid} = ${lt_contact_firsttouch.vid};;
   }
 }
