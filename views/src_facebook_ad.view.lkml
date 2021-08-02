@@ -310,7 +310,7 @@ view: src_facebook_ad {
   measure: DonationROI {
     label: "Donation ROI"
     type: number
-    value_format: "$#.0"
+    value_format: "$#,##0.0"
     sql:  ${ft_transactions_all.amount_amt_sum}-${spend};;
   }
   measure: count {
