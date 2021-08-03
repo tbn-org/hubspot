@@ -59,4 +59,16 @@ view: src_oracle_contract_invoice {
     type: count
     drill_fields: [customer_name]
   }
+
+  measure:  currentmonthamount{
+    label: "Current Month Amount"
+    type: sum
+    sql: case when month(${TABLE}."TRANSACTION_DATE")=month(CURRENT_DATE) then ${TABLE}."INVOICE_AMOUNT" else 0 end ;;
+  }
+
+  measure:  lastmonthamount{
+    label: "Last Month Amount"
+    type: sum
+    sql: case when month(${TABLE}."TRANSACTION_DATE")=month(add_months(CURRENT_DATE,-1)) then ${TABLE}."INVOICE_AMOUNT" else 0 end ;;
+  }
 }
