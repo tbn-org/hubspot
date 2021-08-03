@@ -20,6 +20,7 @@ view: src_oracle_contract_invoice {
 
   measure: invoice_amount {
     type: sum
+
     sql: ${TABLE}."INVOICE_AMOUNT" ;;
   }
 
@@ -57,17 +58,41 @@ view: src_oracle_contract_invoice {
 
   measure: count {
     type: count
+    value_format: "#,##0"
     drill_fields: [customer_name]
+  }
+
+  measure:  avgamount{
+    label: "Average Amount"
+    type: number
+    value_format: "$#,##0"
+    sql:  ${invoice_amount}/${count};;
+  }
+
+  measure:  currentmonthcount{
+    label: "Current Month Count"
+    type: sum
+    value_format: "#,##0"
+    sql: case when month(${TABLE}."TRANSACTION_DATE")=month(CURRENT_DATE) then 1 else 0 end ;;
+  }
+
+  measure:  lastmonthcount{
+    label: "Last Month Count"
+    type: sum
+    value_format: "#,##0"
+    sql: case when month(${TABLE}."TRANSACTION_DATE")=month(add_months(CURRENT_DATE,-1)) then 1 else 0 end ;;
   }
 
   measure:  currentmonthamount{
     label: "Current Month Amount"
+    value_format: "$#,##0"
     type: sum
     sql: case when month(${TABLE}."TRANSACTION_DATE")=month(CURRENT_DATE) then ${TABLE}."INVOICE_AMOUNT" else 0 end ;;
   }
 
   measure:  lastmonthamount{
     label: "Last Month Amount"
+    value_format: "$#,##0"
     type: sum
     sql: case when month(${TABLE}."TRANSACTION_DATE")=month(add_months(CURRENT_DATE,-1)) then ${TABLE}."INVOICE_AMOUNT" else 0 end ;;
   }
