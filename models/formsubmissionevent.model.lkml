@@ -56,7 +56,7 @@ explore:src_contacts_id {
   }
 
   join: ft_transactions_all {
-    type: inner
+    type: left_outer
     relationship: many_to_one
     sql_on:${src_accountemails_hubspot.account_number}=${ft_transactions_all.accountnumber_id};;
   }
@@ -90,7 +90,7 @@ explore:src_contacts_id {
   }
   join: lt_contact_firsttouch {
     view_label: "First Touch"
-    type: inner
+    type: left_outer
     relationship: one_to_one
     sql_on: ${src_contacts_id.vid} = ${lt_contact_firsttouch.vid};;
   }
