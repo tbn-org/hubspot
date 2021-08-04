@@ -88,6 +88,27 @@ view: src_contacts_id_fb {
     sql: ${src_contactformsubmission.submissiontime} ;;
   }
 
+  dimension: firsttouchsource {
+    label: "First Touch Source"
+    type: string
+    sql: ${lt_contact_firsttouch.source} ;;
+  }
+
+  dimension_group: firstcontactdate {
+    label: "First Touch Date"
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    sql: ${lt_contact_firsttouch.firstcontactdate_raw}  ;;
+  }
+
   measure: days_to_donation {
     label: "Days to First Donation"
     value_format: "#,##0.0"

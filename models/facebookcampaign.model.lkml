@@ -34,6 +34,12 @@ explore: src_facebook_ad{
     relationship: many_to_one
     sql_on: ${src_contacts_id_fb.vid} = ${src_contactformsubmission.vid};;
   }
+  join: lt_contact_firsttouch {
+    view_label: "First Touch"
+    type: inner
+    relationship: one_to_one
+    sql_on: ${src_contacts_id_fb.vid} = ${lt_contact_firsttouch.vid};;
+  }
   join:src_oracle_contract_invoice {
     view_label: "Oracle Contract Invoices"
     type: left_outer
