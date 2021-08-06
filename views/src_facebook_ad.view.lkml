@@ -11,6 +11,12 @@ view: src_facebook_ad {
     sql: CONCAT(${TABLE}."ID" , ' ', ${src_facebook_adinsight.date_start_raw}) ;;
   }
 
+  dimension: ad_account_name {
+    type: string
+    label: "Account Name"
+    sql: ${src_facebook_adinsight.ad_account_name} ;;
+  }
+
   dimension: id {
     label: "Ad ID"
     type: string
