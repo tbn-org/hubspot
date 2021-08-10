@@ -70,6 +70,12 @@ view: ft_transactions_all
     sql: ${src_addtrandata.source_url} ;;
   }
 
+  dimension: sourcecampaign {
+    label: "Souce Campaign"
+    type: string
+    sql: ${src_addtrandata.campaign} ;;
+  }
+
   dimension_group: transactiondate_dt {
     label: "Donation"
     type: time
