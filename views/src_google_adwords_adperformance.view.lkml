@@ -152,9 +152,9 @@ view: src_google_adwords_adperformance {
   }
 
   measure: allconversions {
-    label: "Conversion %"
-    type: number
-    value_format: "#.0%"
+    label: "Conversion"
+    type: sum
+    value_format: "#,##0"
     sql: ${TABLE}."AllConversions" ;;
     drill_fields: [vid,first_name,last_name,email,gcl_id]
   }
