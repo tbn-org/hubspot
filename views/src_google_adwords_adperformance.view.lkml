@@ -151,11 +151,11 @@ view: src_google_adwords_adperformance {
     drill_fields: [vid,first_name,last_name,email,gcl_id]
   }
 
-  measure: allconversions {
+  measure: conversions {
     label: "Conversion"
     type: sum
-    value_format: "#,##0"
-    sql: ${TABLE}."AllConversions" ;;
+    value_format: "#,##0.0"
+    sql: ${TABLE}."Conversions" ;;
     drill_fields: [vid,first_name,last_name,email,gcl_id]
   }
 
