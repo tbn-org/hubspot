@@ -317,7 +317,46 @@ view: src_facebook_ad {
     label: "Donation ROI"
     type: number
     value_format: "$#,##0.0"
-    sql:  ${ft_transactions_all.amount_amt_sum}-${spend};;
+    sql:  ${ft_transactions_fb.amount_amt_sum_fb}-${spend};;
+  }
+  measure: amount_amt_sum {
+    value_format: "$#,##0.00"
+    label: "Donation Amount Sum"
+    type: number
+    sql: ${ft_transactions_fb.amount_amt_sum} ;;
+  }
+
+  measure: donation_count {
+    value_format: "#,##0"
+    label: "Donation Count"
+    type: number
+    sql: ${ft_transactions_fb.donation_count} ;;
+  }
+
+  measure: donor_count {
+    value_format: "#,##0"
+    label: "Donor Count"
+    type: number
+    sql: ${ft_transactions_fb.donor_count} ;;
+  }
+  measure: amount_amt_sum_fb {
+    value_format: "$#,##0.00"
+    label: "Donation Amount Sum FB"
+    type: number
+    sql: ${ft_transactions_fb.amount_amt_sum_fb} ;;
+  }
+  measure: donation_count_fb {
+    value_format: "#,##0"
+    label: "Donation Count FB"
+    type: number
+    sql: ${ft_transactions_fb.donation_count_fb} ;;
+  }
+
+  measure: donor_count_fb {
+    value_format: "#,##0"
+    label: "Donor Count FB"
+    type: number
+    sql: ${ft_transactions_fb.donor_count_fb} ;;
   }
   measure: count {
     label: "Ad Count"

@@ -40,6 +40,12 @@ explore: src_facebook_ad{
     relationship: one_to_one
     sql_on: ${src_contacts_id_fb.vid} = ${lt_contact_firsttouch.vid};;
   }
+  join: facebook_originated_contact_bv {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${src_contacts_id_fb.vid} = ${facebook_originated_contact_bv.vid};;
+    fields: []
+  }
   join:src_oracle_contract_invoice {
     view_label: "Oracle Contract Invoices"
     type: left_outer
@@ -74,16 +80,16 @@ explore: src_facebook_ad{
     fields: []
   }
 
-  join: ft_transactions_all {
+  join: ft_transactions_fb {
     type: left_outer
     relationship: many_to_one
-    sql_on:${src_accountemails_hubspot.account_number}=${ft_transactions_all.accountnumber_id};;
+    sql_on:${src_accountemails_hubspot.account_number}=${ft_transactions_fb.accountnumber_id};;
   }
 
   join: src_addtrandata {
     type: left_outer
     relationship: one_to_one
-    sql_on:${src_addtrandata.document_number}=${ft_transactions_all.documentnumber_id};;
+    sql_on:${src_addtrandata.document_number}=${ft_transactions_fb.documentnumber_id};;
     fields: []
   }
 
@@ -98,13 +104,13 @@ explore: src_facebook_ad{
     from: donor_first_last_transactiondate_bv
     type: left_outer
     relationship: many_to_many
-    sql_on: ${donor_first_transactiondate.accountnumber_id}=${ft_transactions_all.accountnumber_id};;
+    sql_on: ${donor_first_transactiondate.accountnumber_id}=${ft_transactions_fb.accountnumber_id};;
     fields: []
   }
   join: ft_transactions_pre_after_bv {
     type: left_outer
     relationship: one_to_many
-    sql_on: ${ft_transactions_all.documentnumber_id} = ${ft_transactions_pre_after_bv.documentnumber_id};;
+    sql_on: ${ft_transactions_fb.documentnumber_id} = ${ft_transactions_pre_after_bv.documentnumber_id};;
     fields: []
   }
   join: src_forms {

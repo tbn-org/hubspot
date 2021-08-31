@@ -67,12 +67,6 @@ view: src_contacts_id_fb {
     sql: ${src_contactformsubmission.formtitle} ;;
   }
 
-  dimension: fromFB {
-    label: "Likely Originated from FB"
-    type: yesno
-    sql: case when ${src_contactformsubmission.submissiontime}<=${ft_transactions_all.first_transactiondate_dt_date} then true else false end ;;
-  }
-
   dimension_group: submissiontime {
     label: "Submission Time"
     type: time

@@ -68,10 +68,10 @@ explore:src_oracle_contract_invoice
     fields: []
   }
 
-  join: ft_transactions_all {
+  join: ft_transactions_fb {
     type: left_outer
     relationship: many_to_one
-    sql_on:${src_accountemails_hubspot.account_number}=${ft_transactions_all.accountnumber_id};;
+    sql_on:${src_accountemails_hubspot.account_number}=${ft_transactions_fb.accountnumber_id};;
     fields: []
   }
   join:src_facebook_ad{
