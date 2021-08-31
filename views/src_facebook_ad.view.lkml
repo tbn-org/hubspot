@@ -358,6 +358,19 @@ view: src_facebook_ad {
     type: number
     sql: ${ft_transactions_fb.donor_count_fb} ;;
   }
+  measure: days_to_donation {
+    label: "Days to First Donation FB"
+    value_format: "#,##0.0"
+    type: number
+    sql: ${ft_transactions_fb.days_to_donation} ;;
+  }
+
+  measure: donation_frequency {
+    label: "Donation Frequency (days) FB"
+    value_format: "#,##0"
+    type: number
+    sql: ${ft_transactions_fb.donation_frequency} ;;
+    }
   measure: count {
     label: "Ad Count"
     type: count

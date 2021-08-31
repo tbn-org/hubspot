@@ -31,6 +31,13 @@ view: ft_transactions_fb
     sql: case when ${facebook_originated_contact_bv.vid} is not null then ${TABLE}."AMOUNT_AMT" else 0 end ;;
   }
 
+  dimension: originated_facebook {
+    label: "Likely Originated from Facebook"
+    type: yesno
+    sql: case when ${facebook_originated_contact_bv.vid} is not null then true else false end ;;
+    hidden: yes
+  }
+
   dimension: documentnumber_id {
     label: "Document Number"
     primary_key: yes
@@ -69,6 +76,20 @@ view: ft_transactions_fb
     label: "Avg. Gift"
     type: number
     sql: sum(${TABLE}."AMOUNT_AMT")/count(distinct ${TABLE}."ACCOUNTNUMBER_ID") ;;
+  }
+
+  measure: days_to_donation {
+    label: "Days to First Donation FB"
+    value_format: "#,##0.0"
+    type: average
+    sql: ${facebook_originated_contact_bv.daystodonation} ;;
+  }
+
+  measure: donation_frequency {
+    label: "Donation Frequency (days)"
+    value_format: "#,##0"
+    type: sum
+    sql: case when ${facebook_originated_contact_bv.vid} is not null then datediff(day,${donor_first_transactiondate.firsttransactiondate_raw},CURRENT_DATE()))/sum(${transactions_lifetime_bv.transactioncount}) end;;
   }
 
   dimension: txncategory_cd {

@@ -103,20 +103,6 @@ view: src_contacts_id_fb {
     sql: ${lt_contact_firsttouch.firstcontactdate_raw}  ;;
   }
 
-  measure: days_to_donation {
-    label: "Days to First Donation"
-    value_format: "#,##0.0"
-    type: number
-    sql: avg(datediff(day,${src_contactformsubmission.submissiontime},${donor_first_transactiondate.firsttransactiondate_raw})) ;;
-  }
-
-  measure: donation_frequency {
-    label: "Donation Frequency (days)"
-    value_format: "#,##0"
-    type: number
-    sql: sum(datediff(day,${donor_first_transactiondate.firsttransactiondate_raw},CURRENT_DATE()))/sum(${transactions_lifetime_bv.transactioncount}) ;;
-  }
-
   measure: count {
     label: "Contact Count"
     type: count_distinct
