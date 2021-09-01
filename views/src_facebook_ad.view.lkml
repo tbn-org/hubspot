@@ -361,7 +361,7 @@ view: src_facebook_ad {
   measure: days_to_donation {
     label: "Days to First Donation FB"
     value_format: "#,##0.0"
-    type: number
+    type: average
     sql: ${ft_transactions_fb.days_to_donation} ;;
   }
 
