@@ -88,7 +88,7 @@ view: ft_transactions_fb
   measure: donation_frequency {
     label: "Donation Frequency (days)"
     value_format: "#,##0"
-    type: number
+    type: average
     sql: datediff(day,${donor_first_transactiondate.firsttransactiondate_raw},CURRENT_DATE())/${transactions_lifetime_bv.transactioncount};;
   }
 
