@@ -21,6 +21,12 @@ explore:src_google_adwords_adperformance
     sql_on: ${src_google_adwords_adperformance.id} = ${src_google_adwords_clicks.creative_id} and ${src_google_adwords_adperformance.date_raw}=${src_google_adwords_clicks.date_raw};;
     fields: []
   }
+  join: src_oracle_contract_invoice {
+    view_label: "Oracle Invoice"
+    type: left_outer
+    relationship:one_to_many
+    sql_on: ${src_contacts_id_google.email} = ${src_oracle_contract_invoice.customer_email};;
+  }
   join: src_contactlistmembers {
     view_label: "Contact List"
     type: left_outer
@@ -33,6 +39,13 @@ explore:src_google_adwords_adperformance
     type: left_outer
     relationship: many_to_many
     sql_on: ${src_contactlists.list_id} = ${src_contactlistmembers.list_id};;
+    fields: []
+  }
+  join: src_contactformsubmission {
+    view_label: "Facebook Form Submission"
+    type: left_outer
+    relationship: one_to_many
+    sql_on: ${src_contacts_id_google.vid} = ${src_contactformsubmission.vid};;
     fields: []
   }
   join: google_adword_donations_bv {

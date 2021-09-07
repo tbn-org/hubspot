@@ -34,8 +34,8 @@ view: ft_transactions_fb
   measure: amount_amt_sum_after {
     value_format: "$#,##0.00"
     label: "Donation Amount After Submission"
-    type: sum
-    sql: case when ${date(src_contactformsubmission.submissiondate})<=${transactiondate_dt_raw}  then ${TABLE}."AMOUNT_AMT" else 0 end ;;
+    type: number
+    sql: sum(case when date(${src_contactformsubmission.submissiondate})<=${transactiondate_dt_raw}  then ${TABLE}."AMOUNT_AMT" else 0 end) ;;
   }
 
   dimension: originated_facebook {

@@ -358,6 +358,12 @@ view: src_facebook_ad {
     type: number
     sql: ${ft_transactions_fb.donor_count_fb} ;;
   }
+  measure: amount_amt_sum_after {
+    value_format: "$#,##0.00"
+    label: "Donation Amount After Submission"
+    type: number
+    sql: ${ft_transactions_fb.amount_amt_sum_after} ;;
+  }
   measure: days_to_donation {
     label: "Days to First Donation FB"
     value_format: "#,##0.0"
