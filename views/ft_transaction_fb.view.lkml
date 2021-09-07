@@ -31,6 +31,13 @@ view: ft_transactions_fb
     sql: case when ${facebook_originated_contact_bv.vid} is not null then ${TABLE}."AMOUNT_AMT" else 0 end ;;
   }
 
+  measure: amount_amt_sum_after {
+    value_format: "$#,##0.00"
+    label: "Donation Amount After Submission"
+    type: sum
+    sql: case when ${date(src_contactformsubmission.submissiondate})<=${transactiondate_dt_raw}  then ${TABLE}."AMOUNT_AMT" else 0 end ;;
+  }
+
   dimension: originated_facebook {
     label: "Likely Originated from Facebook"
     type: yesno
