@@ -39,6 +39,7 @@ explore: src_facebook_ad{
     type: inner
     relationship: one_to_one
     sql_on: ${src_contacts_id_fb.vid} = ${lt_contact_firsttouch.vid};;
+    fields: []
   }
   join: facebook_originated_contact_bv {
     type: left_outer
