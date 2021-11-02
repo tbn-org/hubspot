@@ -56,28 +56,28 @@ view: src_google_adwords_adperformance {
   measure: cost {
     value_format: "$#,##0.0"
     type: sum
-    sql: ${TABLE}."Cost" ;;
+    sql: round(${TABLE}."Cost",2) ;;
   }
 
   measure: cpc {
     label: "CPC"
     type: number
     value_format: "#.000"
-    sql: div0(${cost},${clicks}) ;;
+    sql: round(div0(${cost},${clicks}),3) ;;
   }
 
   measure: cpm {
     label: "CPM"
     type: number
     value_format: "#.000"
-    sql: div0(${cost},${impressions}) ;;
+    sql: round(div0(${cost},${impressions}),3) ;;
   }
 
   measure: roi {
     label: "ROI"
     type: number
     value_format: "#.0%"
-    sql: div0(${donation_amount}, ${cost}) ;;
+    sql: round(div0(${donation_amount}, ${cost}),3) ;;
   }
 
   dimension_group: date {
