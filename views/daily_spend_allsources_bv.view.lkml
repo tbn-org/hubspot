@@ -39,5 +39,9 @@ view: daily_spend_allsources_bv {
     value_format: "$#,##0"
     sql: ${TABLE}."SPEND" ;;
   }
-
+  measure: cpl {
+    type: number
+    value_format: "$#,##0"
+    sql: div0(${spend},${contactcount}) ;;
+  }
 }
