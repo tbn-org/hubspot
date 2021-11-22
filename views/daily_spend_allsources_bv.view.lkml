@@ -29,6 +29,11 @@ view: daily_spend_allsources_bv {
     sql: ${TABLE}."SOURCE" ;;
   }
 
+  dimension: campaign {
+    type: string
+    sql: ${TABLE}."CAMPAIGN" ;;
+  }
+
   measure: contactcount {
     type: sum
     sql: ${TABLE}."CONTACTCOUNT" ;;
