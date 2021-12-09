@@ -22,10 +22,39 @@ view: src_facebook_ad {
     type: string
     sql: ${TABLE}."ID" ;;
   }
+  dimension: adcreativeid {
+    label: "Ad Creative ID"
+    type: string
+    sql: ${TABLE}."AdCreativeId" ;;
+  }
+  dimension: creative_set {
+    type: string
+    sql: ${src_facebook_adcreative.creative_set} ;;
+  }
+  dimension: creative_body {
+    type: string
+    sql: ${src_facebook_adcreative.body} ;;
+  }
+
+  dimension: creative_thumbnail_url {
+    type: string
+    sql: ${src_facebook_adcreative.thumbnail_url} ;;
+  }
+
+  dimension: creative_title {
+    type: string
+    sql: ${src_facebook_adcreative.title} ;;
+  }
 
   dimension: ad_set_id {
     type: string
     sql: ${TABLE}."AdSetId" ;;
+  }
+
+  dimension: ad_set_name {
+    type: string
+    label: "Ad Set Name"
+    sql: ${TABLE}."AdSetName" ;;
   }
 
   dimension: ad_status {

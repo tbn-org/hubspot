@@ -80,6 +80,12 @@ explore:src_oracle_contract_invoice
     relationship: one_to_many
     sql_on:${src_facebook_ad.id} = ${src_contactformsubmission.fbadid};;
     }
+  join: src_facebook_adcreative {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${src_facebook_ad.adcreativeid} = ${src_facebook_adcreative.id};;
+    fields: []
+  }
 
   join: src_facebook_campaign {
     view_label: "Campaign"

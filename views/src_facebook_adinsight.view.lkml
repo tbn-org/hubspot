@@ -36,6 +36,7 @@ view: src_facebook_adinsight {
 
   dimension: ad_set_name {
     type: string
+    label: "Ad Set Name"
     sql: ${TABLE}."AdSetName" ;;
   }
 
