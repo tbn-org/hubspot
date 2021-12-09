@@ -4,6 +4,13 @@ view: ft_transactions_all
   sql_table_name: "DONOR"."FT_TRANSACTIONS"
     ;;
 
+  dimension: prim_key {
+    type: string
+    primary_key: yes
+    sql: ${TABLE}."DOCUMENTNUMBER_ID"||${TABLE}."TRANSACTIONDATE_DT" ;;
+    hidden: yes
+  }
+
   dimension: accountnumber_id {
     label: "SE Account Number"
     type: number
@@ -26,7 +33,6 @@ view: ft_transactions_all
 
   dimension: documentnumber_id {
     label: "Document Number"
-    primary_key: yes
     type: number
     sql: ${TABLE}."DOCUMENTNUMBER_ID" ;;
   }
@@ -131,12 +137,7 @@ view: ft_transactions_all
     ]
     sql: ${donor_first_transactiondate.firsttransactiondate_raw} ;;
   }
-  measure: firstdonationamount {
-    value_format: "$#,##0"
-    label: "First Donation Amount"
-    type: average
-    sql: ${donor_first_transactiondate.firstdonationamount} ;;
-  }
+
   measure: lifetimevalue {
     value_format: "$#,##0"
     label: "Life Time Donation Amount"

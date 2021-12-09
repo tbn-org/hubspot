@@ -5,6 +5,7 @@ view: donor_first_last_transactiondate_bv {
 
   dimension: accountnumber_id {
     type: number
+    primary_key: yes
     sql: ${TABLE}."ACCOUNTNUMBER_ID" ;;
   }
 
@@ -63,15 +64,9 @@ view: donor_first_last_transactiondate_bv {
     sql: ${TABLE}."LASTTRANSACTIONDATE12M" ;;
   }
 
-  measure: donorcount {
-    label: "Donor Count"
-    type: count_distinct
-    sql: ${TABLE}."ACCOUNTNUMBER_ID" ;;
-  }
-
   measure: firstdonationamount {
     label: "First Donation Amount"
-    type: sum
-    sql: ${TABLE}."FirstTransactionAmount" ;;
+    type: sum_distinct
+    sql: ${TABLE}."FIRSTTRANSACTIONAMOUNT" ;;
   }
 }
