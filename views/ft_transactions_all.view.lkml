@@ -131,6 +131,12 @@ view: ft_transactions_all
     ]
     sql: ${donor_first_transactiondate.firsttransactiondate_raw} ;;
   }
+  measure: firstdonationamount {
+    value_format: "$#,##0"
+    label: "First Donation Amount"
+    type: average
+    sql: ${donor_first_transactiondate.firstdonationamount} ;;
+  }
   measure: lifetimevalue {
     value_format: "$#,##0"
     label: "Life Time Donation Amount"

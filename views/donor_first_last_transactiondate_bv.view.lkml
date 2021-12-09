@@ -68,4 +68,10 @@ view: donor_first_last_transactiondate_bv {
     type: count_distinct
     sql: ${TABLE}."ACCOUNTNUMBER_ID" ;;
   }
+
+  measure: firstdonationamount {
+    label: "First Donation Amount"
+    type: sum
+    sql: ${TABLE}."FirstTransactionAmount" ;;
+  }
 }
