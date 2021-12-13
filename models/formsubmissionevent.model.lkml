@@ -80,7 +80,6 @@ explore:src_contacts_id {
     type: left_outer
     relationship: many_to_many
     sql_on: ${donor_first_transactiondate.accountnumber_id}=${ft_transactions_all.accountnumber_id};;
-    fields: []
   }
   join: ft_transactions_pre_after_bv {
     type: left_outer
