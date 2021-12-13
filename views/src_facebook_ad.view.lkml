@@ -411,4 +411,10 @@ view: src_facebook_ad {
     type: count
     drill_fields: [id, name]
   }
+
+  filter:adnotempty {
+    label: "Force form submission at ad level"
+    type: yesno
+    sql: ${src_contactformsubmission.fbadid} is not null ;;
+  }
 }
