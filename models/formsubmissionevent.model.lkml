@@ -93,4 +93,9 @@ explore:src_contacts_id {
     relationship: one_to_one
     sql_on: ${src_contacts_id.vid} = ${lt_contact_firsttouch.vid};;
   }
+  join: recurring_add_lost_details_bv {
+    type: left_outer
+    relationship: many_to_many
+    sql_on:${src_accountemails_hubspot.account_number}=${recurring_add_lost_details_bv.accountnumber_id};;
+  }
 }
