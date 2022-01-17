@@ -111,13 +111,17 @@ explore: src_facebook_ad{
     type: left_outer
     relationship: many_to_many
     sql_on: ${donor_first_transactiondate.accountnumber_id}=${ft_transactions_fb.accountnumber_id};;
-    fields: []
   }
   join: ft_transactions_pre_after_bv {
     type: left_outer
     relationship: one_to_many
     sql_on: ${ft_transactions_fb.documentnumber_id} = ${ft_transactions_pre_after_bv.documentnumber_id};;
     fields: []
+  }
+  join: recurring_add_lost_details_bv {
+    type: left_outer
+    relationship: many_to_many
+    sql_on:${ft_transactions_fb.accountnumber_id}=${recurring_add_lost_details_bv.accountnumber_id};;
   }
   join: src_forms {
     view_label: "Forms"
