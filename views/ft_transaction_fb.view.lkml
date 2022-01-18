@@ -31,6 +31,13 @@ view: ft_transactions_fb
     sql: case when ${facebook_originated_contact_bv.vid} is not null then ${TABLE}."AMOUNT_AMT" else 0 end ;;
   }
 
+  measure: first_amount_sum_fb {
+    value_format: "$#,##0.00"
+    label: "First Donation Amount FB"
+    type: sum
+    sql: case when ${facebook_originated_contact_bv.vid} is not null then ${donor_first_transactiondate.firstdonationamt}" else 0 end ;;
+  }
+
   measure: amount_amt_sum_after {
     value_format: "$#,##0.00"
     label: "Donation Amount After Submission"

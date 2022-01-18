@@ -63,9 +63,13 @@ view: donor_first_last_transactiondate_bv {
     ]
     sql: ${TABLE}."LASTTRANSACTIONDATE12M" ;;
   }
-
-  measure: firstdonationamount {
+  dimension: firstdonationamt {
     label: "First Donation Amount"
+    type: number
+    sql: ${TABLE}."FIRSTTRANSACTIONAMOUNT" ;;
+  }
+  measure: firstdonationamount {
+    label: "First Donation Amount SUM"
     type: sum_distinct
     sql: ${TABLE}."FIRSTTRANSACTIONAMOUNT" ;;
   }
