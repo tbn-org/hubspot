@@ -77,7 +77,12 @@ view: ft_transactions_fb
     type: count_distinct
     sql: case when ${facebook_originated_contact_bv.vid} is not null then ${TABLE}."ACCOUNTNUMBER_ID" end;;
   }
-
+  measure: recurring_count_fb {
+    value_format: "#,##0"
+    label: "Recurring Donor Count"
+    type: count_distinct
+    sql: case when ${facebook_originated_contact_bv.vid} is not null and ${recurring_add_lost_details_bv.accountnumber_id} is not null then ${TABLE}."ACCOUNTNUMBER_ID" end;;
+  }
   measure: donation_avg {
     value_format: "$#,##0.00"
     label: "Avg. Gift"
