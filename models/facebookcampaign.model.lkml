@@ -51,7 +51,6 @@ explore: src_facebook_ad{
     relationship: many_to_one
     sql_on: ${src_contacts_id_fb.vid} = ${facebook_originated_contact_bv.vid}
             and (TO_CHAR(TO_DATE(${facebook_originated_contact_bv.submissiontime_raw}), 'YYYY-MM-DD'))=(src_facebook_adinsight."DateStart");;
-    fields: []
   }
   join:src_oracle_contract_invoice {
     view_label: "Oracle Contract Invoices"
