@@ -1,4 +1,4 @@
-view: src_contactformsubmission {
+view: single_contactformsubmission_bv {
   label: "Form Submission"
   sql_table_name: "HUBSPOT"."SINGLE_CONTACTFORMSUBMISSION_BV"
     ;;
