@@ -97,5 +97,11 @@ explore:src_contacts_id {
     type: left_outer
     relationship: many_to_many
     sql_on:${src_accountemails_hubspot.account_number}=${recurring_add_lost_details_bv.accountnumber_id};;
+    fields: []
+  }
+  join: recurring_accounts_bv {
+    type: left_outer
+    relationship: many_to_one
+    sql_on:${src_accountemails_hubspot.account_number}=${recurring_accounts_bv.accountnumber_id};;
   }
 }
