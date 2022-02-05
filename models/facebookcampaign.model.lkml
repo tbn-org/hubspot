@@ -123,11 +123,6 @@ explore: src_facebook_ad{
     relationship: many_to_many
     sql_on:${ft_transactions_fb.accountnumber_id}=${recurring_add_lost_details_bv.accountnumber_id};;
   }
-  join: recurring_accounts_bv {
-    type: left_outer
-    relationship: many_to_one
-    sql_on:${src_accountemails_hubspot.account_number}=${recurring_accounts_bv.accountnumber_id};;
-  }
   join: src_forms {
     view_label: "Forms"
     type: inner
