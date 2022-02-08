@@ -92,8 +92,18 @@ view: src_contacts_id {
     sql: ${src_owners.last_name} ;;
   }
 
-  dimension: sqldate {
-    type: string
+  dimension_group: sqldate {
+    label: "SQL Date"
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
     sql: ${TABLE}."SQL_QualifiedDate_DT" ;;
   }
 
