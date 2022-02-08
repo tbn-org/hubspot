@@ -21,7 +21,7 @@ explore: ft_campaign{
   join: src_owners {
     type: left_outer
     relationship: many_to_one
-    sql_on:${src_owners.owner_id}=${src_contacts_id.owner};;
+    sql_on:to_char(${src_owners.owner_id})=${src_contacts_id.owner};;
     fields: []
   }
   join: src_accountmaster {
