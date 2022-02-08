@@ -60,6 +60,7 @@ view: src_contacts_id {
     label: "Contact ID"
     type: number
     value_format_name: id
+    primary_key: yes
     sql: ${TABLE}."VID" ;;
   }
 
