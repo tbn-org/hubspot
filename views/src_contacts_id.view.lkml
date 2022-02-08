@@ -76,7 +76,7 @@ view: src_contacts_id {
 
   dimension: owner {
     type: string
-    label: "Owner"
+    label: "Owner ID"
     sql: ${TABLE}."OWNER"  ;;
   }
 
