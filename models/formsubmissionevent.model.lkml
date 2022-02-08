@@ -104,4 +104,10 @@ explore:src_contacts_id {
     relationship: many_to_one
     sql_on:${src_accountemails_hubspot.account_number}=${recurring_accounts_bv.accountnumber_id};;
   }
+  join: src_owners {
+    type: left_outer
+    relationship: many_to_one
+    sql_on:${src_owners.owner_id}=${src_contacts_id.owner};;
+    fields: []
+  }
 }

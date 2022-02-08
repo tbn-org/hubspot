@@ -74,6 +74,29 @@ view: src_contacts_id {
     sql: ${TABLE}."GCLID" ;;
   }
 
+  dimension: owner {
+    type: string
+    label: "Owner"
+    sql: ${TABLE}."OWNER"  ;;
+  }
+
+  dimension: ownerfirstname {
+    type: string
+    label: "Owner First Name"
+    sql: ${src_owners.first_name} ;;
+  }
+
+  dimension: ownerlastname {
+    label: "Owner Last Name"
+    type: string
+    sql: ${src_owners.last_name} ;;
+  }
+
+  dimension: sqldate {
+    type: string
+    sql: ${TABLE}."SQL_QualifiedDate_DT" ;;
+  }
+
   measure: count {
     label: "Contact Count"
     type: count_distinct

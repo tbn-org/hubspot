@@ -18,6 +18,12 @@ explore: ft_campaign{
     relationship: many_to_one
     sql_on: ${src_contacts_id.vid} = ${lt_emailcampaign_donation.vid};;
   }
+  join: src_owners {
+    type: left_outer
+    relationship: many_to_one
+    sql_on:${src_owners.owner_id}=${src_contacts_id.owner};;
+    fields: []
+  }
   join: src_accountmaster {
     type: inner
     relationship: many_to_one
