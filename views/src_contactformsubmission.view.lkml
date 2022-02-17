@@ -71,6 +71,20 @@ view: src_contactformsubmission {
     sql: ${TABLE}."SUBMISSIONTIME" ;;
   }
 
+  dimension_group: submissiondate1 {
+    label: "Submission Date"
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    sql: ${TABLE}."SUBMISSIONTIME" ;;
+  }
+
   dimension: vid {
     label: "Contact ID"
     type: number
