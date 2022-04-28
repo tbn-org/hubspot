@@ -61,6 +61,13 @@ explore:src_contacts_id {
     sql_on:${src_accountemails_hubspot.account_number}=${ft_transactions_all.accountnumber_id};;
   }
 
+  join: src_accountdates {
+    type: left_outer
+    view_label: "SE Account"
+    relationship: many_to_one
+    sql_on:${src_accountemails_hubspot.account_number}=${src_accountdates.account_number} and ${src_accountdates.date_type}='DDCINCEPT' and ${src_accountdates.active}=true;;
+  }
+
   join: src_addtrandata {
     type: left_outer
     relationship: one_to_one
