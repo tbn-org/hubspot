@@ -29,6 +29,12 @@ view: daily_spend_allsources_bv {
     sql: ${TABLE}."SOURCE" ;;
   }
 
+  dimension: accountname {
+    label: "Account Name"
+    type: string
+    sql: ${TABLE}."ACCOUNTNAME" ;;
+  }
+
   dimension: campaign {
     type: string
     sql: ${TABLE}."CAMPAIGN" ;;
