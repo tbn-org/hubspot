@@ -37,6 +37,16 @@ view: lt_emailcampaign_donation {
     sql: ${TABLE}."UTM_CAMPAIGN" ;;
   }
 
+  dimension: utm_source {
+    type: string
+    sql: ${TABLE}."UTM_SOURCE" ;;
+  }
+
+  dimension: utm_medium {
+    type: string
+    sql: ${TABLE}."UTM_MEDIUM" ;;
+  }
+
   dimension: vid {
     type: number
     value_format_name: id
