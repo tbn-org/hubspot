@@ -39,6 +39,18 @@ view: ft_campaign {
     sql: ${TABLE}."CAMPAIGN_ID" ;;
   }
 
+  dimension: utm_source {
+    label: "UTM Source"
+    type: string
+    sql: ${TABLE}."UTM_SOURCE" ;;
+  }
+
+  dimension: utm_medium {
+    label: "UTM Medium"
+    type: string
+    sql: ${TABLE}."UTM_MEDIUM" ;;
+  }
+
   dimension: campaign_name_descr {
     label: "HS Email Campaign Name"
     type: string
