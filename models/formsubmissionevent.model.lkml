@@ -134,6 +134,5 @@ explore:src_contacts_id {
     type: left_outer
     relationship: many_to_one
     sql_on: ${src_stage.stage_id}=${src_deals.deal_stageid};;
-    fields: []
   }
 }
