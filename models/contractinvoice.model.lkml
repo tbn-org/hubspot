@@ -8,12 +8,12 @@ explore:src_oracle_contract_invoice
   label: "Oracle Contract Invoices"
   description: "Oracle Contract Invoices"
 
-    join: src_contacts_id {
+  join: src_contacts_id {
       view_label: "HS Contact"
       type: left_outer
       relationship: one_to_many
       sql_on: ${src_contacts_id.email} = ${src_oracle_contract_invoice.customer_email};;
-    }
+  }
   join: src_contacts_id_fb {
     view_label: "Hubspot Contact"
     type: left_outer
@@ -101,4 +101,10 @@ explore:src_oracle_contract_invoice
     sql_on: ${src_facebook_ad.id} = ${src_facebook_adinsight.ad_id};;
     fields: []
     }
+  join: src_engagements {
+    view_label: "Meeting"
+    type: left_outer
+    relationship: many_to_many
+    sql_on:${src_contacts_id.owner}=to_char(${src_engagements.owner_id}) and array_contains(to_char(${src_contacts_id.vid})::variant, split(${src_engagements.associated_contacts},','));;
+  }
   }
