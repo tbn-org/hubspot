@@ -121,6 +121,6 @@ explore:src_contacts_id {
     view_label: "Meeting"
     type: left_outer
     relationship: many_to_many
-    sql_on:${src_contacts_id.owner}=to_char(${src_engagements.owner_id}) and ${src_contacts_id.vid}=${src_engagements.associated_contacts} ;;
+    sql_on:${src_contacts_id.owner}=to_char(${src_engagements.owner_id}) and array_contains(to_char(${src_contacts_id.vid})::variant, split(${src_engagements.associated_contacts},','));;
   }
 }
