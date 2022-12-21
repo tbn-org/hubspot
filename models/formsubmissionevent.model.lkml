@@ -123,4 +123,17 @@ explore:src_contacts_id {
     relationship: many_to_many
     sql_on:${src_contacts_id.owner}=to_char(${src_engagements.owner_id}) and array_contains(to_char(${src_contacts_id.vid})::variant, split(${src_engagements.associated_contacts},','));;
   }
+  join: src_deals {
+    view_label: "HS Deals"
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${src_deals.associated_vids} = to_char(${src_contacts_id.vid});;
+  }
+  join: src_stage {
+    view_label: "HS Deal Stage"
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${src_stage.stage_id}=${src_deals.deal_stageid};;
+    fields: []
+  }
 }
