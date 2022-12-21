@@ -117,4 +117,10 @@ explore:src_contacts_id {
     sql_on:${src_contacts_id.owner}=to_char(${src_owners.owner_id});;
     fields: []
   }
+  join: src_engagements {
+    view_label: "Meeting"
+    type: left_outer
+    relationship: many_to_many
+    sql_on:${src_contacts_id.owner}=to_char(${src_engagements.owner_id}) and ${src_contacts_id.vid}=${src_engagements.associated_contacts} ;;
+  }
 }
