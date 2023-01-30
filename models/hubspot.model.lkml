@@ -65,11 +65,18 @@ explore: ft_campaign{
     relationship: one_to_many
     sql_on:${ft_campaign.campaign_id}=${src_emailcampaignevent.campaign_id};;
   }
+  join: src_contacts_id2 {
+    view_label: "HS Contact"
+    type: left_outer
+    relationship: many_to_one
+    from: src_contacts_id
+    sql_on: ${src_contacts_id2.email} = ${src_emailcampaignevent.recipient_email};;
+    fields: []
+  }
   join: ft_formsubmissions {
     type: left_outer
     relationship: one_to_many
-    sql_on: ${src_contacts_id.vid} = ${ft_formsubmissions.vid};;
-    fields: []
+    sql_on: ${src_contacts_id2.vid} = ${ft_formsubmissions.vid};;
   }
   join: src_contactlistmembers {
     view_label: "Contact List"
