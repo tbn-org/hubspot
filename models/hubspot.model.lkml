@@ -69,7 +69,6 @@ explore: ft_campaign{
     type: left_outer
     relationship: one_to_many
     sql_on: ${src_contacts_id.vid} = ${ft_formsubmissions.vid};;
-    fields: []
   }
   join: src_contactlistmembers {
     view_label: "Contact List"
