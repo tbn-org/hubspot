@@ -3,6 +3,11 @@ view: ft_formsubmissions {
   sql_table_name: "HUBSPOT"."FT_FORMSUBMISSIONS"
     ;;
 
+  dimension: primary_key {
+    primary_key: yes
+    sql: CONCAT(${TABLE}."SUBMISSIONTIMESTAMP", ${TABLE}."VID") ;;
+  }
+
   dimension: address_cd {
     label: "Address"
     type: string
