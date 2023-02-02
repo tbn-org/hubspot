@@ -61,6 +61,7 @@ explore: ft_campaign{
     fields: []
   }
   join: src_emailcampaignevent {
+    view_label: "HS Campaign Event"
     type: left_outer
     relationship: one_to_many
     sql_on:${ft_campaign.campaign_id}=${src_emailcampaignevent.campaign_id};;
@@ -79,7 +80,7 @@ explore: ft_campaign{
     sql_on: ${src_contacts_id2.vid} = ${ft_formsubmissions.vid};;
   }
   join: src_contactlistmembers {
-    view_label: "Contact List"
+    view_label: "Contact List Member"
     type: left_outer
     relationship: many_to_many
     sql_on: ${src_contacts_id.vid} = ${src_contactlistmembers.vid};;
