@@ -113,7 +113,6 @@ view: src_contacts_id {
     type: time
     timeframes: [
       raw,
-      time,
       date,
       week,
       month,
