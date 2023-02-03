@@ -108,6 +108,21 @@ view: src_contacts_id {
     sql: ${TABLE}."SQL_QualifiedDate_DT" ;;
   }
 
+  dimension_group: vodawssignup {
+    label: "VOD AWS Signup"
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    sql: ${TABLE}."VODAWS_Signup_Date" ;;
+  }
+
   measure: count {
     label: "Contact Count"
     type: count_distinct
