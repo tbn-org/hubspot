@@ -94,7 +94,7 @@ view: src_contacts_id {
   }
 
   dimension_group: sqldate {
-    label: "SQL Date"
+    label: "SQL"
     type: time
     timeframes: [
       raw,
