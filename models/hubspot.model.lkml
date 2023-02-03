@@ -65,6 +65,7 @@ explore: ft_campaign{
     type: left_outer
     relationship: one_to_many
     sql_on:${ft_campaign.campaign_id}=${src_emailcampaignevent.campaign_id};;
+    fields: []
   }
   join: src_contacts_id2 {
     view_label: "HS Contact"

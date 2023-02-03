@@ -135,4 +135,16 @@ explore:src_contacts_id {
     relationship: many_to_one
     sql_on: ${src_stage.stage_id}=${src_deals.deal_stageid};;
   }
+  join: src_emailcampaignevent {
+    view_label: "HS Campaign Event"
+    type: left_outer
+    relationship: one_to_many
+    sql_on:${src_contacts_id.email}=${src_emailcampaignevent.recipient_email};;
+  }
+  join: src_emailcampaign {
+    view_label: "HS Email Campaign"
+    type: left_outer
+    relationship: many_to_one
+    sql_on:${src_emailcampaign.id}=${src_emailcampaignevent.campaign_id};;
+  }
 }
