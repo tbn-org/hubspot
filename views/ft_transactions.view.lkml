@@ -20,7 +20,6 @@ view: ft_transactions {
     label: "Donation Amount"
     type: number
     sql: ${TABLE}."AMOUNT_AMT" ;;
-    drill_fields: [documentnumber_id,transactiondate_dt_date,amount_amt]
   }
 
   measure: amount_amt_sum {
@@ -28,6 +27,7 @@ view: ft_transactions {
     label: "Donation Amount Sum"
     type: number
     sql: sum(${TABLE}."AMOUNT_AMT") ;;
+    drill_fields: [documentnumber_id,transactiondate_dt_date,amount_amt]
   }
 
   dimension: documentnumber_id {
