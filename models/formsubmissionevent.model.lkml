@@ -147,4 +147,19 @@ explore:src_contacts_id {
     relationship: many_to_one
     sql_on:${src_emailcampaign.id}=${src_emailcampaignevent.campaign_id};;
   }
+  join: src_wkt_customers {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${src_wkt_customers.emailhashsha2} = sha2( ${src_contacts_id.email},256) ;;
+  }
+  join: src_wkt_videoviewevents {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${src_wkt_videoviewevents.customerid} = ${src_wkt_customers.customerid} ;;
+  }
+  join: src_wkt_videometadata {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${src_wkt_videoviewevents.videoid} = ${src_wkt_videometadata.id} ;;
+  }
 }
