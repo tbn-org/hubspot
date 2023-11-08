@@ -82,6 +82,12 @@ view: ft_transactions_all
     sql: ${src_addtrandata.campaign} ;;
   }
 
+  dimension: utmcampaign {
+    label: "UTM Campaign"
+    type: string
+    sql: ${src_addtrandata.utmcampaign} ;;
+  }
+
   dimension: utmsource {
     label: "UTM Source"
     type: string

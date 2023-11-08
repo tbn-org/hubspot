@@ -205,6 +205,12 @@ view: src_addtrandata {
     sql: ${TABLE}."UPDATE_TIMESTAMP" ;;
   }
 
+  dimension: utmcampaign {
+    type: string
+    label: "UTM Campaign"
+    sql: ${TABLE}."utm_campaign" ;;
+  }
+
   dimension: utmcontent {
     type: string
     label: "UTM Content"
