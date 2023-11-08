@@ -205,6 +205,30 @@ view: src_addtrandata {
     sql: ${TABLE}."UPDATE_TIMESTAMP" ;;
   }
 
+  dimension: utmcontent {
+    type: string
+    label: "UTM Content"
+    sql: ${TABLE}."utm_content" ;;
+  }
+
+  dimension: utmmedia {
+    type: string
+    label: "UTM Media"
+    sql: ${TABLE}."utm_medium" ;;
+  }
+
+  dimension: utmsource {
+    type: string
+    label: "UTM Source"
+    sql: ${TABLE}."utm_source" ;;
+  }
+
+  dimension: utmterm {
+    type: string
+    label: "UTM Term"
+    sql:substring(${TABLE}."XMLData",position('<utm_term>',${TABLE}."XMLData")+10,position('</utm_term>',${TABLE}."XMLData")-position('<utm_term>',${TABLE}."XMLData")-10);;
+  }
+
   dimension: xmldata {
     type: string
     sql: ${TABLE}."XMLData" ;;

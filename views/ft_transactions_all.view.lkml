@@ -82,6 +82,30 @@ view: ft_transactions_all
     sql: ${src_addtrandata.campaign} ;;
   }
 
+  dimension: utmsource {
+    label: "UTM Source"
+    type: string
+    sql: ${src_addtrandata.utmsource} ;;
+  }
+
+  dimension: utmcontent {
+    label: "UTM Content"
+    type: string
+    sql: ${src_addtrandata.utmcontent} ;;
+  }
+
+  dimension: utmmedia {
+    label: "UTM Media"
+    type: string
+    sql: ${src_addtrandata.utmmedia} ;;
+  }
+
+  dimension: utmterm {
+    label: "UTM Term"
+    type: string
+    sql: ${src_addtrandata.utmterm} ;;
+  }
+
   dimension_group: transactiondate_dt {
     label: "Donation"
     type: time
