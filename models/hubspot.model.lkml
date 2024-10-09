@@ -3,7 +3,7 @@ label: "Hubspot"
 include: "/views/*.view"
 
 explore: ft_campaign{
-  from:ft_campaign_bv
+  from:ft_campaign
   persist_for: "8 hour"
   label: "Hubspot Campaign & Donation"
   description: "Campaign & Donation"

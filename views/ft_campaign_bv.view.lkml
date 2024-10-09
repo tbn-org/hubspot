@@ -27,6 +27,18 @@ view: ft_campaign_bv {
     sql: ${TABLE}."UNIQUEKEY" ;;
   }
 
+  dimension: campaign_year {
+    label: "Campaign Year"
+    type: number
+    sql: ${TABLE}."CAMPAIGN_YEAR" ;;
+  }
+
+  dimension: campaign_month {
+    label: "Campaign Month"
+    type: number
+    sql: ${TABLE}."CAMPAIGN_MONTH" ;;
+  }
+
   dimension: campaign_code {
     label: "Campaign Code"
     type: string
