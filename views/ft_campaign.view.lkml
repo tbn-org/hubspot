@@ -39,6 +39,12 @@ view: ft_campaign {
     sql: ${TABLE}."CAMPAIGN_MONTH" ;;
   }
 
+  dimension: campaign_type {
+    label: "Campaign Type"
+    type: number
+    sql: ${TABLE}."CAMPAIGN_TYPE" ;;
+  }
+
   dimension: campaign_code {
     label: "Campaign Code"
     type: string
