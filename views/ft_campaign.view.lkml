@@ -41,7 +41,7 @@ view: ft_campaign {
 
   dimension: campaign_type {
     label: "Campaign Type"
-    type: number
+    type: string
     sql: ${TABLE}."CAMPAIGN_TYPE" ;;
   }
 
