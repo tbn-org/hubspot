@@ -39,7 +39,7 @@ explore: ft_campaign{
   }
   join: ft_transactions {
     type: left_outer
-    relationship: one_to_many
+    relationship: one_to_one
     sql_on:${lt_emailcampaign_donation.documentnumber_id}=${ft_transactions.documentnumber_id};;
   }
   join: src_addtrandata {
