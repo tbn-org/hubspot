@@ -5,7 +5,7 @@ view: ft_transactions {
 
   dimension: primary_key {
     primary_key: yes
-    sql: CONCAT(${TABLE}."DOCUMENTNUMBER_ID",${TABLE}."TRANSACTIONDATE_DT" ) ;;
+    sql: CONCAT(${TABLE}."DOCUMENTNUMBER_ID",${TABLE}."TRANSACTIONDATE_DT",${TABLE}."AMOUNT_AMT") ;;
   }
 
   dimension: accountnumber_id {
