@@ -3,6 +3,11 @@ view: ft_transactions {
   sql_table_name: "DONOR"."FT_TRANSACTIONS"
     ;;
 
+  dimension: primary_key {
+    primary_key: yes
+    sql: CONCAT(${TABLE}."DOCUMENTNUMBER_ID", ${TABLE}."AMOUNT_AMT") ;;
+  }
+
   dimension: accountnumber_id {
     label: "SE Account Number"
     type: number
@@ -32,7 +37,6 @@ view: ft_transactions {
 
   dimension: documentnumber_id {
     label: "Document Number"
-    primary_key: yes
     type: number
     sql: ${TABLE}."DOCUMENTNUMBER_ID" ;;
   }
