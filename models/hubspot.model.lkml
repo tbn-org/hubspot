@@ -38,8 +38,8 @@ explore: ft_campaign{
     fields: []
   }
   join: ft_transactions {
-    type: inner
-    relationship: many_to_one
+    type: left_outer
+    relationship: one_to_many
     sql_on:${lt_emailcampaign_donation.documentnumber_id}=${ft_transactions.documentnumber_id};;
   }
   join: src_addtrandata {
