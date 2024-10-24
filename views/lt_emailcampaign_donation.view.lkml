@@ -2,6 +2,11 @@ view: lt_emailcampaign_donation {
   sql_table_name: "HUBSPOT"."LT_EMAILCAMPAIGN_DONATION"
     ;;
 
+  dimension: primary_key {
+    primary_key: yes
+    sql: CONCAT(${TABLE}."CAMPAIGN_ID", ${TABLE}."DOCUMENTNUMBER_ID") ;;
+  }
+
   dimension: accountnumber_id {
     label: ""
     type: number
