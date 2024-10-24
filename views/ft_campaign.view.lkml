@@ -77,8 +77,8 @@ view: ft_campaign {
 
   measure: click_nbr {
     label: "Clicked"
-    type: number
-    sql: sum(${TABLE}."CLICK_NBR") ;;
+    type: sum
+    sql: ${TABLE}."CLICK_NBR" ;;
     drill_fields: [src_emailcampaignevent.recipient_email,src_emailcampaignevent.created,src_emailcampaignevent.type]
     link: {
       label: "Show click event"
@@ -88,8 +88,8 @@ view: ft_campaign {
 
   measure: deferred_nbr {
     label: "Deferred"
-    type: number
-    sql: sum(${TABLE}."DEFERRED_NBR") ;;
+    type: sum
+    sql: ${TABLE}."DEFERRED_NBR" ;;
     drill_fields: [src_emailcampaignevent.recipient_email,src_emailcampaignevent.created,src_emailcampaignevent.type]
     link: {
       label: "Show deferred event"
@@ -99,8 +99,8 @@ view: ft_campaign {
 
   measure: delivered_nbr {
     label: "Delivered"
-    type: number
-    sql: sum(${TABLE}."DELIVERED_NBR") ;;
+    type: sum
+    sql: ${TABLE}."DELIVERED_NBR" ;;
     drill_fields: [src_emailcampaignevent.recipient_email,src_emailcampaignevent.created,src_emailcampaignevent.type]
     link: {
       label: "Show delivered event"
@@ -111,8 +111,8 @@ view: ft_campaign {
   measure: donation_amt {
     value_format: "$#,##0"
     label: "Donation Amount"
-    type: number
-    sql: sum(${ft_transactions.amount_amt}) ;;
+    type: sum
+    sql: ${ft_transactions.amount_amt} ;;
     drill_fields: [ft_transactions.accountnumber_id,ft_transactions.documentnumber_id,ft_transactions.email,ft_transactions.sourcecode_cd,ft_transactions.amount_amt,ft_transactions.transactiondate_dt,ft_transactions.first_transaction_flag,ft_transactions.lifetimevalue,ft_transactions.lifetimecount]
   }
 
@@ -132,8 +132,8 @@ view: ft_campaign {
 
   measure: dropped_nbr {
     label: "Dropped"
-    type: number
-    sql: sum(${TABLE}."DROPPED_NBR") ;;
+    type: sum
+    sql: ${TABLE}."DROPPED_NBR" ;;
     drill_fields: [src_emailcampaignevent.recipient_email,src_emailcampaignevent.created,src_emailcampaignevent.type]
     link: {
       label: "Show dropped event"
@@ -143,15 +143,15 @@ view: ft_campaign {
 
   measure: included_nbr {
     label: "Included"
-    type: number
-    sql: sum(${TABLE}."INCLUDED_NBR") ;;
+    type: sum
+    sql: ${TABLE}."INCLUDED_NBR" ;;
   }
 
   measure: largest_donation_amt {
     value_format: "$#,##0"
     label: "Largest Donation"
-    type: number
-    sql: max(${TABLE}."LARGEST_DONATION_AMT") ;;
+    type: max
+    sql: ${TABLE}."LARGEST_DONATION_AMT" ;;
   }
 
   dimension_group: last_processing_start {
@@ -171,14 +171,14 @@ view: ft_campaign {
 
   measure: mta_dropped_nbr {
     label: "MTA Dropped"
-    type: number
-    sql: sum(${TABLE}."MTA_DROPPED_NBR") ;;
+    type: sum
+    sql: ${TABLE}."MTA_DROPPED_NBR" ;;
   }
 
   measure: open_nbr {
     label: "Open"
-    type: number
-    sql: sum(${TABLE}."OPEN_NBR") ;;
+    type: sum
+    sql: ${TABLE}."OPEN_NBR" ;;
     drill_fields: [src_emailcampaignevent.recipient_email,src_emailcampaignevent.created,src_emailcampaignevent.type]
     link: {
       label: "Show open event"
@@ -188,8 +188,8 @@ view: ft_campaign {
 
   measure: processed_nbr {
     label: "Processed"
-    type: number
-    sql: sum(${TABLE}."PROCESSED_NBR") ;;
+    type: sum
+    sql: ${TABLE}."PROCESSED_NBR" ;;
     drill_fields: [src_emailcampaignevent.recipient_email,src_emailcampaignevent.created,src_emailcampaignevent.type]
     link: {
       label: "Show processed event"
@@ -199,14 +199,14 @@ view: ft_campaign {
 
   measure: queued_nbr {
     label: "Queued"
-    type: number
-    sql: sum(${TABLE}."QUEUED_NBR") ;;
+    type: sum
+    sql: ${TABLE}."QUEUED_NBR" ;;
   }
 
   measure: sent_nbr {
     label: "Sent"
-    type: number
-    sql: sum(${TABLE}."SENT_NBR") ;;
+    type: sum
+    sql: ${TABLE}."SENT_NBR" ;;
     drill_fields: [src_emailcampaignevent.recipient_email,src_emailcampaignevent.created,src_emailcampaignevent.type]
     link: {
       label: "Show sent event"
@@ -216,14 +216,14 @@ view: ft_campaign {
 
   measure: statuschanged_nbr {
     label: "Status Changed"
-    type: number
-    sql: sum(${TABLE}."STATUSCHANGED_NBR") ;;
+    type: sum
+    sql: ${TABLE}."STATUSCHANGED_NBR" ;;
   }
 
   measure: unsubscribed_nbr {
     label: "Unsubscribed"
-    type: number
-    sql: sum(${TABLE}."UNSUBSCRIBED_NBR") ;;
+    type: sum
+    sql: ${TABLE}."UNSUBSCRIBED_NBR" ;;
   }
 
   dimension: utm_campaign {
