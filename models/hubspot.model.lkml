@@ -40,12 +40,12 @@ explore: ft_campaign{
   join: ft_transactions {
     type: left_outer
     relationship: one_to_one
-    sql_on:${lt_emailcampaign_donation.documentnumber_id}=${ft_transactions.documentnumber_id};;
+    sql_on:${src_addtrandata.document_number}=${ft_transactions.documentnumber_id};;
   }
   join: src_addtrandata {
     type: left_outer
     relationship: one_to_one
-    sql_on:${src_addtrandata.document_number}=${ft_transactions.documentnumber_id};;
+    sql_on:${src_addtrandata.campaign}=${ft_campaign.campaign_code};;
     fields: []
   }
   join: donor_first_transactiondate {
