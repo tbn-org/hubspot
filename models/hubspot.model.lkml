@@ -39,12 +39,12 @@ explore: ft_campaign{
   }
   join: ft_transactions {
     type: left_outer
-    relationship: one_to_one
+    relationship: many_to_many
     sql_on:${src_addtrandata.document_number}=${ft_transactions.documentnumber_id};;
   }
   join: src_addtrandata {
     type: left_outer
-    relationship: one_to_one
+    relationship: one_to_many
     sql_on:${src_addtrandata.campaign}=${ft_campaign.campaign_code};;
     fields: []
   }
