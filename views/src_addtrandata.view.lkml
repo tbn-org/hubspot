@@ -159,6 +159,7 @@ view: src_addtrandata {
   dimension: record_id {
     type: number
     sql: ${TABLE}."RecordId" ;;
+    primary_key: yes
   }
 
   dimension: run_id {
