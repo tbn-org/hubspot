@@ -45,8 +45,7 @@ explore: ft_campaign{
   join: src_addtrandata {
     type: left_outer
     relationship: one_to_many
-    sql_on:${src_addtrandata.campaign}=${ft_campaign.campaign_code}
-            and ${src_addtrandata.utmsource}=${ft_campaign.utm_source};;
+    sql_on:${src_addtrandata.campaign}=${ft_campaign.campaign_code};;
     fields: []
   }
   join: donor_first_transactiondate {
