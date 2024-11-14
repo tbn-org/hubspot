@@ -46,8 +46,6 @@ explore: ft_campaign{
     type: left_outer
     relationship: one_to_many
     sql_on:${src_addtrandata.campaign}=${ft_campaign.campaign_code}
-            and ${src_addtrandata.utmcampaign}=${ft_campaign.utm_campaign}
-            and ${src_addtrandata.utmmedia}=${ft_campaign.utm_medium}
             and ${src_addtrandata.utmsource}=${ft_campaign.utm_source};;
     fields: []
   }
