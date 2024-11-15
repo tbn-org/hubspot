@@ -181,4 +181,9 @@ view: ft_transactions_all
     sql: ${transactions_lifetime_bv.transactioncount} ;;
     drill_fields: [accountnumber_id,documentnumber_id,transactiondate_dt_date,amount_amt]
   }
+  dimension: newdonor {
+    label: "New Donor"
+    type: string
+    sql: ${TABLE}."NEWDONOR_CD" ;;
+  }
 }
