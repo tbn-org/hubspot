@@ -76,6 +76,12 @@ view: ft_transactions_all
     sql: ${src_addtrandata.source_url} ;;
   }
 
+  dimension: emailname {
+    label: "Email Name"
+    type: string
+    sql: ${src_addtrandata.emailname} ;;
+  }
+
   dimension: sourcecampaign {
     label: "Souce Campaign"
     type: string
@@ -111,6 +117,8 @@ view: ft_transactions_all
     type: string
     sql: ${src_addtrandata.utmterm} ;;
   }
+
+
 
   dimension_group: transactiondate_dt {
     label: "Donation"

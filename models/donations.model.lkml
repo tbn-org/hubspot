@@ -14,6 +14,12 @@ join: src_addtrandata {
   sql_on:${src_addtrandata.document_number}=${ft_transactions_all.documentnumber_id};;
   fields: []
 }
+  join: ft_campaign {
+    type: left_outer
+    relationship: many_to_one
+    sql_on:${src_addtrandata.campaign}=${ft_campaign.campaign_code};;
+    fields: []
+  }
   join: transactions_lifetime_bv {
     type: inner
     relationship: many_to_many

@@ -57,6 +57,12 @@ view: src_addtrandata {
     sql: ${TABLE}."Campaign" ;;
   }
 
+  dimension: emailname {
+    label: "Email Name"
+    type: string
+    sql: ${ft_campaign.campaign_name_descr} ;;
+  }
+
   dimension: consumer_id {
     type: string
     sql: ${TABLE}."ConsumerID" ;;
