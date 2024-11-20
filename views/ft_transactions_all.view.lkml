@@ -27,8 +27,8 @@ view: ft_transactions_all
   measure: amount_amt_sum {
     value_format: "$#,##0.00"
     label: "Donation Amount Sum"
-    type: number
-    sql: sum(${TABLE}."AMOUNT_AMT") ;;
+    type: sum
+    sql: ${TABLE}."AMOUNT_AMT" ;;
   }
 
   dimension: documentnumber_id {
@@ -54,7 +54,7 @@ view: ft_transactions_all
     value_format: "$#,##0.00"
     label: "Avg. Gift"
     type: number
-    sql: sum(${TABLE}."AMOUNT_AMT")/count(distinct ${TABLE}."ACCOUNTNUMBER_ID") ;;
+    sql: amount_amt_sum/donor_count ;;
   }
 
   dimension: txncategory_cd {
