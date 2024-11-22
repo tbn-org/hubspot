@@ -54,7 +54,7 @@ view: ft_transactions_all
     value_format: "$#,##0.00"
     label: "Avg. Gift"
     type: number
-    sql: amount_amt_sum/donor_count ;;
+    sql: ${ft_transactions_all.amount_amt_sum}/${ft_transactions_all.donor_count} ;;
   }
 
   dimension: txncategory_cd {
