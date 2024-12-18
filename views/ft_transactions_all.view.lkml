@@ -194,4 +194,9 @@ view: ft_transactions_all
     type: string
     sql: ${TABLE}."NEWDONOR_CD" ;;
   }
+  dimension: reportgroup {
+    label: "Report Group"
+    type: string
+    sql: ${TABLE}."REPORTGROUP_CD" ;;
+  }
 }
