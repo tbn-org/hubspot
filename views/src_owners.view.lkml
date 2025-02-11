@@ -33,7 +33,7 @@ view: src_owners {
 
   dimension: owner_id {
     type: string
-    sql: ${TABLE}."UserId" ;;
+    sql: ${TABLE}."Id" ;;
   }
 
   dimension: type {
