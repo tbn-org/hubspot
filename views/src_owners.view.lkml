@@ -26,11 +26,6 @@ view: src_owners {
     sql: ${TABLE}."FirstName" ;;
   }
 
-  dimension: include_inactive {
-    type: yesno
-    sql: ${TABLE}."IncludeInactive" ;;
-  }
-
   dimension: last_name {
     type: string
     sql: ${TABLE}."LastName" ;;
@@ -38,17 +33,7 @@ view: src_owners {
 
   dimension: owner_id {
     type: string
-    sql: ${TABLE}."OwnerId" ;;
-  }
-
-  dimension: portal_id {
-    type: number
-    sql: ${TABLE}."PortalId" ;;
-  }
-
-  dimension: remote_list_aggregate {
-    type: string
-    sql: ${TABLE}."RemoteListAggregate" ;;
+    sql: ${TABLE}."UserId" ;;
   }
 
   dimension: type {
