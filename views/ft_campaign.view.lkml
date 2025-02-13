@@ -75,6 +75,12 @@ view: ft_campaign {
     sql: ${TABLE}."CAMPAIGN_NAME_DESCR" ;;
   }
 
+  dimension: content_id {
+    label: "Content ID"
+    type: string
+    sql: ${TABLE}."CONTENT_ID" ;;
+  }
+
   measure: click_nbr {
     label: "Clicked"
     type: sum

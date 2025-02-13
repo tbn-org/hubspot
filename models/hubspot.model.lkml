@@ -21,7 +21,7 @@ explore: ft_campaign{
   join: src_campaignassets {
     type: left_outer
     relationship: many_to_one
-    sql_on: ${src_campaignassets.assetid} = ${ft_campaign.campaign_id};;
+    sql_on: ${src_campaignassets.assetid} = ${ft_campaign.content_id};;
   }
   join: src_contacts_id {
     view_label: "HS Contact (donation)"
