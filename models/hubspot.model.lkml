@@ -13,6 +13,16 @@ explore: ft_campaign{
     sql_on: nvl(${lt_emailcampaign_donation.campaign_id},0) = nvl(${ft_campaign.campaign_id},0) and ${lt_emailcampaign_donation.campaign_code} = ${ft_campaign.campaign_code};;
     fields: []
   }
+  join: src_campaigns {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${src_campaigns.hs_id} = ${src_campaignassets.campaignid};;
+  }
+  join: src_campaignassets {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${src_campaignassets.assetid} = ${ft_campaign.campaign_id};;
+  }
   join: src_contacts_id {
     view_label: "HS Contact (donation)"
     type: left_outer
