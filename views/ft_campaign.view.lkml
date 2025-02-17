@@ -1,5 +1,5 @@
 view: ft_campaign {
-  view_label: "Campaign"
+  view_label: "Email Campaign"
   sql_table_name: "HUBSPOT"."FT_CAMPAIGN";;
 
   measure: avg_donation_amt {
