@@ -10,7 +10,7 @@ explore: ft_campaign{
   join: lt_emailcampaign_donation {
     type: left_outer
     relationship: one_to_many
-    sql_on: nvl(${lt_emailcampaign_donation.campaign_id},0) = nvl(${ft_campaign.campaign_id},0) and ${lt_emailcampaign_donation.campaign_code} = ${ft_campaign.campaign_code};;
+    sql_on: nvl(${lt_emailcampaign_donation.campaign_id},0) = nvl(${ft_campaign.campaign_id},0) and lower(${lt_emailcampaign_donation.campaign_code}) = lower(${ft_campaign.campaign_code});;
     fields: []
   }
   join: src_campaigns {
@@ -61,7 +61,7 @@ explore: ft_campaign{
   join: src_addtrandata {
     type: left_outer
     relationship: one_to_many
-    sql_on:${src_addtrandata.campaign}=${ft_campaign.campaign_code};;
+    sql_on:lower(${src_addtrandata.campaign})=lower(${ft_campaign.campaign_code});;
     fields: []
   }
   join: donor_first_transactiondate {
