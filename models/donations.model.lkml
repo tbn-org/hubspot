@@ -17,7 +17,7 @@ join: src_addtrandata {
   join: ft_campaign {
     type: left_outer
     relationship: many_to_many
-    sql_on:${src_addtrandata.campaign}=${ft_campaign.campaign_code};;
+    sql_on:lower(${src_addtrandata.campaign})=lower(${ft_campaign.campaign_code});;
     fields: []
   }
   join: transactions_lifetime_bv {
