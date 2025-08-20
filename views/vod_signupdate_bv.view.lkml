@@ -27,7 +27,8 @@ view: vod_signupdate_bv {
     sql: ${TABLE}."EMAIL" ;;
   }
   measure: count {
-    type: count
-    drill_fields: [id]
+    label: "User Count"
+    type: count_distinct
+    sql: ${TABLE}."ID" ;;
   }
 }
