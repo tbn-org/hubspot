@@ -14,7 +14,7 @@ view: src_contacts_id {
   }
 
   dimension_group: create_date {
-    label: "Create Date"
+    label: "Create"
     type:time
     timeframes: [
       raw,

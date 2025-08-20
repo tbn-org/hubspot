@@ -14,7 +14,7 @@ view: vod_signupdate_bv {
     sql: ${TABLE}."APPTYPE" ;;
   }
   dimension_group: created {
-    label: "Created Date"
+    label: "Created"
     type: time
     timeframes: [raw, date, week, month, quarter, year]
     convert_tz: no
