@@ -7,6 +7,26 @@ view: src_contacts_id {
     sql: ${TABLE}."Email" ;;
   }
 
+  dimension: tbn_nl {
+    type: string
+    label: "TBN NL"
+    sql: ${TABLE}."TBN_NL" ;;
+  }
+
+  dimension_group: create_date {
+    label: "Create Date"
+    type:time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    sql: ${TABLE}."CREATE_DATE" ;;
+  }
+
   dimension: first_name {
     type: string
     sql: ${TABLE}."First Name" ;;
