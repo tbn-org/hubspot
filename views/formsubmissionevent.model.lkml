@@ -13,6 +13,12 @@ explore:src_contacts_id {
     relationship: one_to_many
     sql_on: ${src_contacts_id.vid} = ${src_contactformsubmission.vid};;
   }
+  join: vod_signupdate_bv {
+    view_label: "VOD Signup"
+    type: left_outer
+    relationship: one_to_one
+    sql_on: ${src_contacts_id.email} = ${vod_signupdate_bv.email} ;;
+  }
   join: src_forms {
     view_label: "Forms"
     type: inner
