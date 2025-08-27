@@ -19,6 +19,12 @@ explore:src_contacts_id {
     relationship: one_to_one
     sql_on: ${src_contacts_id.email} = ${vod_signupdate_bv.email} ;;
   }
+  join: contact_firstdonation_bv {
+    view_label: "Contact First Donation"
+    type: left_outer
+    relationship: one_to_one
+    sql_on: ${src_contacts_id.vid} = ${contact_firstdonation_bv.vid} ;;
+  }
   join: src_forms {
     view_label: "Forms"
     type: inner
