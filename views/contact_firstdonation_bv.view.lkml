@@ -22,6 +22,20 @@ view: contact_firstdonation_bv {
     primary_key: yes
     sql: ${TABLE}."VID" ;;
   }
+  dimension: Time_to_Action_donation {
+    label: "Time to Action - Donate"
+    type: number
+    sql:to_date(${contact_firstdonation_bv.create_raw})-to_date(${src_contacts_id.create_date_raw});;
+  }
+  dimension: Time_to_Action_bucket_donation {
+    label: "Time to Action Bucket- Donate"
+    type: string
+    sql:case when to_date(${contact_firstdonation_bv.create_raw})-to_date(${src_contacts_id.create_date_raw})<=30 then '0–30 Days'
+             when to_date(${contact_firstdonation_bv.create_raw})-to_date(${src_contacts_id.create_date_raw})<=90 then '31–90 Days'
+             when to_date(${contact_firstdonation_bv.create_raw})-to_date(${src_contacts_id.create_date_raw})<=180 then '91–180 Days'
+             when to_date(${contact_firstdonation_bv.create_raw})-to_date(${src_contacts_id.create_date_raw})>180 then '180+ Days'
+        end;;
+  }
   measure: contactcount {
     type: count_distinct
     sql: ${TABLE}."VID" ;;

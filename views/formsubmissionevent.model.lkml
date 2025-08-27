@@ -64,7 +64,7 @@ explore:src_contacts_id {
     type: left_outer
     relationship: many_to_many
     sql_on: ${src_accountemails_hubspot.email_address} = ${src_contacts_id.email};;
-    fields: [account_number,email_address,use_as_primary,Time_to_Action_donation,Time_to_Action_bucket_donation]
+    fields: []
   }
 
   join: ft_transactions_all {
