@@ -10,13 +10,11 @@ view: ft_transactions_all
     sql: ${TABLE}."DOCUMENTNUMBER_ID"||${TABLE}."TRANSACTIONDATE_DT" ;;
     hidden: yes
   }
-
   dimension: accountnumber_id {
     label: "SE Account Number"
     type: number
     sql: ${TABLE}."ACCOUNTNUMBER_ID" ;;
   }
-
   dimension: amount_amt {
     value_format: "$#,##0.00"
     label: "Donation Amount"

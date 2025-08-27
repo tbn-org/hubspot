@@ -8,6 +8,16 @@ view: vod_signupdate_bv {
     type: string
     sql: ${TABLE}."ID" ;;
   }
+  dimension: Time_to_Action_signup {
+    label: "Time to Action - Signup"
+    type: number
+    sql:${vod_signupdate_bv.created_raw}-${src_contacts_id.create_date_raw};;
+  }
+  dimension: Time_to_Action_donation {
+    label: "Time to Action - Donate"
+    type: number
+    sql:${ft_transactions_all.transactiondate_dt_raw}-${src_contacts_id.create_date_raw};;
+  }
   dimension: apptype {
     label: "Subscription Type"
     type: string
