@@ -25,15 +25,15 @@ view: contact_firstdonation_bv {
   dimension: Time_to_Action_donation {
     label: "Time to Action - Donate"
     type: number
-    sql:DATEDIFF(day,${src_contacts_id.create_date_raw},${contact_firstdonation_bv.create_raw});;
+    sql:DATEDIFF(day,${src_contacts_id.create_date_raw}::DATE,${contact_firstdonation_bv.create_raw}::DATE);;
   }
   dimension: Time_to_Action_bucket_donation {
     label: "Time to Action Bucket- Donate"
     type: string
-    sql:case when DATEDIFF(day,${src_contacts_id.create_date_raw},${contact_firstdonation_bv.create_raw})<=30 then '0–30 Days'
-             when DATEDIFF(day,${src_contacts_id.create_date_raw},${contact_firstdonation_bv.create_raw})<=90 then '31–90 Days'
-             when DATEDIFF(day,${src_contacts_id.create_date_raw},${contact_firstdonation_bv.create_raw})<=180 then '91–180 Days'
-             when DATEDIFF(day,${src_contacts_id.create_date_raw},${contact_firstdonation_bv.create_raw})>180 then '180+ Days'
+    sql:case when DATEDIFF(day,${src_contacts_id.create_date_raw}::DATE,${contact_firstdonation_bv.create_raw}::DATE)<=30 then '0–30 Days'
+             when DATEDIFF(day,${src_contacts_id.create_date_raw}::DATE,${contact_firstdonation_bv.create_raw}::DATE)<=90 then '31–90 Days'
+             when DATEDIFF(day,${src_contacts_id.create_date_raw}::DATE,${contact_firstdonation_bv.create_raw}::DATE)<=180 then '91–180 Days'
+             when DATEDIFF(day,${src_contacts_id.create_date_raw}::DATE,${contact_firstdonation_bv.create_raw}::DATE)>180 then '180+ Days'
         end;;
   }
   measure: contactcount {
