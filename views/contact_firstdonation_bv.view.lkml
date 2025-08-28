@@ -36,6 +36,16 @@ view: contact_firstdonation_bv {
              when DATEDIFF(day,${src_contacts_id.create_date_raw},${contact_firstdonation_bv.first_donation_raw})>180 then '180+ Days'
         end;;
   }
+  dimension: Time_to_Action_bucket_donation_sortkey {
+    label: "Time to Action Bucket- Donate Sortkey"
+    type: number
+    sql:case when DATEDIFF(day,${src_contacts_id.create_date_raw},${contact_firstdonation_bv.first_donation_raw})<=30 then 1
+             when DATEDIFF(day,${src_contacts_id.create_date_raw},${contact_firstdonation_bv.first_donation_raw})<=90 then 2
+             when DATEDIFF(day,${src_contacts_id.create_date_raw},${contact_firstdonation_bv.first_donation_raw})<=180 then 3
+             when DATEDIFF(day,${src_contacts_id.create_date_raw},${contact_firstdonation_bv.first_donation_raw})>180 then 4
+            else 5
+        end;;
+  }
   measure: contactcount {
     type: count_distinct
     sql: ${TABLE}."VID" ;;
