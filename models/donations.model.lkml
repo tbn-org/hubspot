@@ -8,6 +8,12 @@ persist_for: "8 hour"
 label: "Donations"
 description: "Donations"
 
+join: src_sourcecode {
+    view_label: "Donation Source Codes"
+    type: left_outer
+    relationship: many_to_many
+    sql_on:${ft_transactions_all.sourcecode_cd}=${src_sourcecode.sourcecode};;
+  }
 join: src_addtrandata {
   type: left_outer
   relationship: one_to_one
