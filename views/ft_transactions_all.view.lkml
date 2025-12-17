@@ -58,7 +58,6 @@ view: ft_transactions_all
     label: "TXN Category"
     type: string
     sql: ${TABLE}."TXNCATEGORY_CD" ;;
-    hidden: yes
   }
 
   dimension: sourcecode_cd {
