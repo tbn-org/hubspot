@@ -50,8 +50,4 @@ view: rebrandly_links_bv {
     timeframes: [raw, time, date, week, month, quarter, year]
     sql: ${TABLE}."UPDATEDAT" ;;
   }
-  measure: count {
-    type: count
-    drill_fields: [id, domainname]
-  }
 }
