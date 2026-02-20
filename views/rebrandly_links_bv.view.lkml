@@ -7,8 +7,8 @@ view: rebrandly_links_bv {
     type: string
     sql: ${TABLE}."ID" ;;
   }
-  dimension: clicks {
-    type: number
+  measure: clicks {
+    type: sum
     sql: ${TABLE}."CLICKS" ;;
   }
   dimension_group: createdat {
