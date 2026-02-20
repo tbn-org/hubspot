@@ -15,3 +15,10 @@ explore:daily_donation_allsources_bv
   label: "Marketing Daily Donation"
   description: "Marketing Daily Donation"
 }
+
+explore:rebrandly_links_bv
+{
+  persist_for: "8 hour"
+  label: "Rebrandly Clicks"
+  description: "Rebrandly Clicks"
+}
