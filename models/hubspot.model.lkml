@@ -13,6 +13,12 @@ explore: ft_campaign{
     sql_on: nvl(${lt_emailcampaign_donation.campaign_id},0) = nvl(${ft_campaign.campaign_id},0) and lower(${lt_emailcampaign_donation.campaign_code}) = lower(${ft_campaign.campaign_code});;
     fields: []
   }
+  join: workflowemailcampaigns_bv {
+    type: left_outer
+    view_label: "Workflow"
+    relationship: one_to_one
+    sql_on: ${ft_campaign.campaign_id} = ${workflowemailcampaigns_bv.emailcampaignid};;
+  }
   join: src_campaigns {
     type: left_outer
     relationship: many_to_one
