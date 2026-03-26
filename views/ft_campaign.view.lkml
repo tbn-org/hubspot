@@ -57,6 +57,12 @@ view: ft_campaign {
     sql: ${TABLE}."CAMPAIGN_ID" ;;
   }
 
+  dimension: emailcampaign_type {
+    label: "HS Email Campaign Type"
+    type: string
+    sql: ${TABLE}."EMAILCAMPAIGN_TYPE" ;;
+  }
+
   dimension: utm_source {
     label: "UTM Source"
     type: string
