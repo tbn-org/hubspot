@@ -7,7 +7,7 @@ view: src_emailcampaignevent {
   dimension: id {
     primary_key: yes
     type: string
-    sql: ${TABLE}."Id" ;;
+    sql: ${TABLE}."CampaignId"||${TABLE}."RecipientEmail"||${TABLE}."Type";;
   }
 
   dimension: app_id {
