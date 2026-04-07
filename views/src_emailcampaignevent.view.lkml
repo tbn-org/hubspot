@@ -1,6 +1,6 @@
 view: src_emailcampaignevent {
   label: "HS Email Campaign Event"
-  sql_table_name: "HUBSPOT"."SRC_EMAILCAMPAIGNEVENT"
+  sql_table_name: "HUBSPOT"."SRC_EMAILCAMPAIGNEVENT_BV"
     ;;
   drill_fields: [id]
 
