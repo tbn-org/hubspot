@@ -79,6 +79,10 @@ view: ft_campaign {
     label: "HS Email Campaign Name"
     type: string
     sql: ${TABLE}."CAMPAIGN_NAME_DESCR" ;;
+    link: {
+      label: "Open Email Campaign in HubSpot"
+      url: "https://app.hubspot.com/email/4091910/details/{{ ft_campaign.content_id._value }}/performance"
+    }
   }
 
   dimension: content_id {
