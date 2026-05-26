@@ -13,6 +13,7 @@ view: ft_transactions_all
   dimension: accountnumber_id {
     label: "SE Account Number"
     type: number
+    value_format: "####"
     sql: ${TABLE}."ACCOUNTNUMBER_ID" ;;
   }
   dimension: amount_amt {
@@ -26,13 +27,27 @@ view: ft_transactions_all
     label: "Donation Amount Sum"
     type: sum
     sql: ${TABLE}."AMOUNT_AMT" ;;
-    drill_fields:[accountnumber_id,documentnumber_id,reportgroup,transactiondate_dt_date,amount_amt,sourcecode_cd,src_sourcecode_donation.type,txncategory_cd]
+    drill_fields:[accountnumber_id,documentnumber_id,reportgroup,before_donation_cnt,transactiondate_dt_date,amount_amt,sourcecode_cd,src_sourcecode_donation.type,txncategory_cd]
   }
 
   dimension: documentnumber_id {
     label: "Document Number"
     type: number
+    value_format: "####"
     sql: ${TABLE}."DOCUMENTNUMBER_ID" ;;
+  }
+
+  dimension: before_donation_cnt {
+    label: "Before Donation Count"
+    type: number
+    sql: ${TABLE}."BEFORE_DONATION_CNT" ;;
+  }
+
+  dimension: before_donation_amt {
+    label: "Before Donation Amount"
+    type: number
+    value_format: "$#,##0.00"
+    sql: ${TABLE}."BEFORE_DONATION_AMT" ;;
   }
 
   measure: donation_count {
