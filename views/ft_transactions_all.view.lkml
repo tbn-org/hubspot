@@ -26,6 +26,7 @@ view: ft_transactions_all
     label: "Donation Amount Sum"
     type: sum
     sql: ${TABLE}."AMOUNT_AMT" ;;
+    drill_fields:[accountnumber_id,documentnumber_id,reportgroup,transactiondate_dt_date,amount_amt,sourcecode_cd,src_sourcecode_donation.type,txncategory_cd]
   }
 
   dimension: documentnumber_id {
