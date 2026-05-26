@@ -40,6 +40,7 @@ view: ft_transactions_all
     label: "Donation Count"
     type: count_distinct
     sql: ${TABLE}."DOCUMENTNUMBER_ID" ;;
+    drill_fields:[accountnumber_id,documentnumber_id,reportgroup,transactiondate_dt_date,amount_amt,sourcecode_cd,src_sourcecode_donation.type,txncategory_cd]
   }
 
   measure: donor_count {
