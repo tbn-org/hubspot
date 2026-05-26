@@ -38,13 +38,13 @@ view: ft_transactions_all
   }
 
   dimension: before_donation_cnt {
-    label: "Before Donation Count"
+    label: "Preceding Donation Count"
     type: number
     sql: ${TABLE}."BEFORE_DONATION_CNT" ;;
   }
 
   dimension: before_donation_amt {
-    label: "Before Donation Amount"
+    label: "Preceding Donation Amount"
     type: number
     value_format: "$#,##0.00"
     sql: ${TABLE}."BEFORE_DONATION_AMT" ;;
