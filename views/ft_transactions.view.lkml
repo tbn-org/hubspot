@@ -37,7 +37,7 @@ view: ft_transactions {
 
   dimension: reportgroup {
     label: "Report Group"
-    type: number
+    type: string
     sql: ${TABLE}."REPORTGROUP_CD" ;;
   }
 
