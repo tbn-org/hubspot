@@ -37,7 +37,6 @@ explore:src_contacts_id {
     type: left_outer
     relationship: many_to_many
     sql_on: ${src_contacts_id.vid} = ${src_contactlistmembers.vid};;
-    fields: []
   }
   join: src_contactlists {
     view_label: "Contact List"
