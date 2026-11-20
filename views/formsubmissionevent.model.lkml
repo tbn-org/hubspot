@@ -32,11 +32,18 @@ explore:src_contacts_id {
     sql_on: ${src_forms.guid} = ${src_contactformsubmission.formid};;
     fields: []
   }
+  join: vb_formsubmission_bv {
+    view_label: "Vision Bible Submission List"
+    type: left_outer
+    relationship: one_to_one
+    sql_on: ${src_contacts_id.vid} = ${vb_formsubmission_bv.vid};;
+  }
   join: src_contactlistmembers {
     view_label: "Contact List Member"
     type: left_outer
     relationship: many_to_many
     sql_on: ${src_contacts_id.vid} = ${src_contactlistmembers.vid};;
+    fields: []
   }
   join: src_contactlists {
     view_label: "Contact List"
